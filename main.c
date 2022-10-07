@@ -2,4 +2,5 @@
 
 void main(){
     printf("Olá");
+    printf("Olá 2");
 }
