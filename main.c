@@ -1,5 +1,8 @@
 #include<stdio.h>
+#include<locale.h>
 
 void main(){
-    printf("Olá");
+    setlocale(LC_ALL, "Portuguese");
+    printf("CFA - Controle de fluxo automotivo");
+
 }
