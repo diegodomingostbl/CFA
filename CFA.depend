@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1665868127 source:c:\repositorio\cfa\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+
+1665862917 source:c:\repositorio\cfa\struct.c
+
+1665868229 source:c:\repositorio\cfa\archive.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.c"
+
+1665862917 c:\repositorio\cfa\struct.c
+
+1665868127 c:\repositorio\cfa\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+
+1665868307 source:c:\repositorio\cfa\main.c
+	<stdio.h>
+	<locale.h>
+	<string.h>
+	"struct.c"
+
+1665868229 c:\repositorio\cfa\archive.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.c"
+

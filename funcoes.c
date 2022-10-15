@@ -3,11 +3,11 @@
 #include <string.h>
 #include <assert.h>
 
-char** str_split(char* a_str, const char a_delim)
+char ** str_split(char* a_str, const char a_delim)
 {
-    char** result    = 0;
-    size_t count     = 0;
-    char* tmp        = a_str;
+    char** result = 0;
+    size_t count = 0;
+    char* tmp = a_str;
     char* last_comma = 0;
     char delim[2];
     delim[0] = a_delim;
@@ -51,6 +51,7 @@ char** str_split(char* a_str, const char a_delim)
     return result;
 }
 
+/*
 int main()
 {
     char months[] = "diego cesar domingos|Teste|12345";
@@ -74,3 +75,4 @@ int main()
 
     return 0;
 }
+*/
