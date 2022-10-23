@@ -13,17 +13,18 @@ typedef struct{
 typedef struct{
     char nome[30], dia[3], mes[3], ano[5];
     float valor;
+    bool contaValida;
 }c_receber;
 
 //prototipos funcoes
 c_receber criarContaReceber();
 c_pagar criarContaPagar();
-_Bool textoVazio(char texto[]);
+bool textoVazio(char texto[]);
 
 void main(){
 
     setlocale (LC_ALL, "portuguese");
-    int tam = 5, count_p = 0, count_r = 0, cp = 0, cr = 0, op, retorno;
+    int tam = 450, count_p = 0, count_r = 0, cp = 0, cr = 0, op, retorno;
     char resposta, nome[30];
     float total_desp = 0, total_rec = 0;
     c_pagar pagar[100];
@@ -56,6 +57,7 @@ void main(){
                 do {
                     pagar[count_p] = criarContaPagar(); //chamada funcao criarContaPagar()
                 }while(!pagar[count_p].contaValida);
+
                 printf("\nDeseja fazer outro cadastro (s/n)?: ");
                 resposta = getche();
                 resposta = tolower(resposta); // converte a resposta do usuário para um caractere minúsculo
@@ -65,6 +67,7 @@ void main(){
                 cp++;
 
             }while(resposta == 's' && count_p < tam);
+
             system("pause");
             system("cls"); // limpa a tela
         break;
@@ -72,7 +75,10 @@ void main(){
         case 2: // o usuario cadastra contas a receber do cliente
             printf("\nPara efetuar um cadastro de contas a receber digite os dados abaixo: \n");
             do{
-                receber[count_r] = criarContaReceber();//chamada funcao criarContaReceber()
+                do {
+                    receber[count_r] = criarContaReceber();//chamada funcao criarContaReceber()
+                }while(!receber[count_r].contaValida);
+
                 printf("\nDeseja fazer outro cadastro (s/n)?: ");
                 resposta = getche();
                 resposta = tolower(resposta);// converte a resposta do usuário para um caractere minúsculo
@@ -201,12 +207,14 @@ void main(){
              if(cr == 0 && cp == 0)
                printf("\nVocê não possui contas cadastradas\n\n");
 
-             if (t_cr !=0 || t_cp != 0)
-             printf("\nO resultado liquido do mês %s do ano %s é: R$ %.2f\n\n", mes, ano, t_cr - t_cp);
+             if (t_cr !=0 || t_cp != 0){
+                printf("\nO resultado liquido do mês %s do ano %s é: R$ %.2f\n\n", mes, ano, t_cr - t_cp);
+                system ("pause");
+             }
 
 
              else{
-                printf("\nVocê não possui contas para o mes %s e ano %s\n", mes, ano);
+                printf("\nVocê não possui contas para o periodo %s/%s\n", mes, ano);
                 system ("pause");
              }
              break;
@@ -255,7 +263,7 @@ void main(){
 
         case 7:{// Usuario altera cadastro contas a pagar
             char mes[3], ano[5];
-            int r_Pm, r_Pa;
+            int r_Pm, r_Pa, achou = 0;
 
             if (count_p == 0){
                 printf("\nVocê ainda não cadastrou nenhuma conta a pagar\n\n");
@@ -280,6 +288,7 @@ void main(){
                        r_Pa = strcmp(pagar[i].ano,ano);
 
                         if (strcmp(nome, pagar[i].nome) == 0 && r_Pm == 0 && r_Pa == 0){
+                            achou = 1;
                             printf("\nFornecedor:%s \n", pagar[i].nome);
                             printf("Data da compra:%02s/%02s/%04s \n", pagar[i].dia, pagar[i].mes, pagar[i].ano);
                             printf("Valor da compra: R$ %.2f \n", pagar[i].valor);
@@ -315,21 +324,22 @@ void main(){
                                 printf("Valor da compra: R$ %.2f \n", pagar[i].valor);
                                 system("pause");
                             }
+                            else(resposta != 's');
+                            break;
                         }
-
-
-                             else if(strcmp(nome, pagar[i].nome) != 0 || r_Pm == 0 || r_Pa == 0)
-                                printf("\nNenhum fornecedor com o nome %s no mês %s do ano %s foi encontrado.\n\n", nome, mes, ano);
-                                system("pause");
-
                     }
+                            if(achou == 0){
+                                printf("\nNenhum fornecedor com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
+                                system ("pause");
+                                break;
+                        }
             }
             break;
         } //case 7
 
         case 8:{// Usuario altera cadastro contas a receber
             char mes[3], ano[5];
-            int r_Rm, r_Ra;
+            int r_Rm, r_Ra, achou = 0;
 
             if (count_r == 0){
                 printf("\nVocê ainda não cadastrou nenhuma conta a receber\n");
@@ -353,7 +363,9 @@ void main(){
                    r_Rm = strcmp(receber[i].mes,mes);
                    r_Ra = strcmp(receber[i].ano,ano);
 
-                    if (strcmp(nome, receber[i].nome) == 0 && r_Rm == 0 && r_Ra == 0){
+
+                    if (strcmp(receber[i].nome, nome) == 0 && r_Rm == 0 && r_Ra == 0){
+                        achou = 1;
                         printf("\nCliente:%s \n", receber[i].nome);
                         printf("Data do recebimento:%02s/%02s/%04s \n", receber[i].dia, receber[i].mes, receber[i].ano);
                         printf("Valor a receber: R$ %.2f \n", receber[i].valor);
@@ -389,12 +401,18 @@ void main(){
                             printf("Valor a receber:R$ %.2f \n", receber[i].valor);
                             system ("pause");
                         }
+                         else(resposta != 's');
+                            break;
                     }
+                }
 
-                        else if(strcmp(nome, receber[i].nome) != 0 || r_Rm == 0 || r_Ra == 0)
+                        if(achou == 0){
                             printf("\nNenhum cliente com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
                             system ("pause");
-                }
+                            break;
+                        }
+
+
             }
             break;
         } //case 8
@@ -405,24 +423,33 @@ void main(){
 // criando funcoes
 c_receber criarContaReceber() {
     c_receber conta;
+    conta.contaValida = false;
     printf("\n*******************INICIANDO CADASTRO*******************\n");
     fflush(stdin);
     printf("\nDigite o nome do cliente: ");
     gets(conta.nome);
+    if(textoVazio(conta.nome))
+        return conta;
+
     fflush(stdin);
     printf("Insira o dia de recebimento da conta: ");
     scanf("%s", &conta.dia);
+
     fflush(stdin);
     printf("Insira mes de recebimento da conta: ");
     scanf("%s", &conta.mes);
     fflush(stdin);
+
     printf("Insira ano de recebimento da conta: ");
     scanf("%s", &conta.ano);
     fflush(stdin);
+
     printf("Digite o valor a receber: ");
     scanf("%f", &conta.valor);
+
     printf("\n*************CADASTRO REALIZADO COM SUCESSO*************\n");
     fflush(stdin);
+    conta.contaValida = true;
     return conta;
 }
 
