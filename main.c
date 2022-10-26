@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+#include "archive.c";
+
 void main(){
-    printf("teste");
+    printf("%d", retornaUltimoIdUsuario());
 }
