@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <time.h>
+
+#include "struct.c";
 
 char ** str_split(char* a_str, const char a_delim)
 {
@@ -76,3 +79,15 @@ int main()
     return 0;
 }
 */
+
+DATEC retornaDataAtual(){
+	DATEC data;
+  	time_t t = time(NULL);
+  	struct tm tm = *localtime(&t);
+  	
+  	data.dia = tm.tm_mday;
+  	data.mes = tm.tm_mon + 1;
+  	data.ano = tm.tm_year + 1900;
+  	
+  	return data;
+}
