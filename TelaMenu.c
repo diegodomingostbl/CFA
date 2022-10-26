@@ -88,7 +88,7 @@ void main (){
                     system("cls");
                     fflush(stdin);
                     do{
-                        
+
                         printf(" Escolha o que deseja alterar \n");
                         printf(" [1] Dados de funcion√°rio\n");
                         printf(" [2] Dados de casa\n");
@@ -148,7 +148,7 @@ void main (){
                         system("cls");
                         fflush(stdin);
                         do{
-                            
+
                             printf(" Escolha qual relatorio deseja visualizar \n");
                             printf(" [1] Funcion√°rios\n");
                             printf(" [2] Casas\n");
@@ -240,7 +240,7 @@ void main (){
 
 int cadastrarFuncionario(){
 	USER usuario;
-	
+
 	printf("Cadastro de funcion·rio\n");
 	printf("Nome: ");
 	gets(usuario.nome);
@@ -257,7 +257,7 @@ int cadastrarFuncionario(){
 	scanf("%d", &usuario.dt_nascimento.ano);
 	printf("Sal·rio: ");
 	scanf("%f", &usuario.salario);
-	printf("Cargo: ")
+	printf("Cargo: ");
 	gets(usuario.cargo);
 	printf("EndereÁo: ");
 	gets(usuario.endereco);
@@ -274,6 +274,5 @@ int cadastrarFuncionario(){
 	printf("Senha: ");
 	gets(usuario.senha);
 	usuario.dt_cadastro = retornaDataAtual();
-	
-	
+
 }

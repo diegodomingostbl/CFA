@@ -54,40 +54,14 @@ char ** str_split(char* a_str, const char a_delim)
     return result;
 }
 
-/*
-int main()
-{
-    char months[] = "diego cesar domingos|Teste|12345";
-    char** tokens;
-
-    printf("months=[%s]\n\n", months);
-
-    tokens = str_split(months, '|');
-
-    if (tokens)
-    {
-        int i;
-        for (i = 0; *(tokens + i); i++)
-        {
-            printf("month=[%s]\n", *(tokens + i));
-            free(*(tokens + i));
-        }
-        printf("\n");
-        free(tokens);
-    }
-
-    return 0;
-}
-*/
-
 DATEC retornaDataAtual(){
 	DATEC data;
   	time_t t = time(NULL);
   	struct tm tm = *localtime(&t);
-  	
+
   	data.dia = tm.tm_mday;
   	data.mes = tm.tm_mon + 1;
   	data.ano = tm.tm_year + 1900;
-  	
+
   	return data;
 }

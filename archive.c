@@ -66,19 +66,6 @@ int procurarUsuario(int id){
 	return 1;
 }
 
-/*
-char ** splitSeparetor(char[2000] linha, int qtdParametros){
-    char buf[] ="abc/@qwe/@ccd";
-    int i = 0;
-    char *p = strtok (linha, "/@");
-    char *array[qtdParametros];
+int retornaUltimoIdUsuario(){
 
-    while (p != NULL)
-    {
-        array[i++] = p;
-        p = strtok (NULL, "/@");
-    }
-
-    return array;
 }
-*/
