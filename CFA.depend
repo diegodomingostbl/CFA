@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1666824570 source:c:\repositorio\cfa\funcoes.c
+1666825886 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -9,20 +9,22 @@
 
 1666824408 source:c:\repositorio\cfa\struct.c
 
-1666825693 source:c:\repositorio\cfa\archive.c
+1666825895 source:c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.c"
 
 1666824408 c:\repositorio\cfa\struct.c
 
-1665868127 c:\repositorio\cfa\funcoes.c
+1666825886 c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
+	<time.h>
+	"struct.c"
 
-1666824408 source:c:\repositorio\cfa\main.c
+1666825863 source:c:\repositorio\cfa\main.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
@@ -33,4 +35,6 @@
 	<stdio.h>
 	<stdlib.h>
 	"struct.c"
+
+1666825956 source:c:\repositorio\cfa\telamenu.c
 
