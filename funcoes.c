@@ -59,21 +59,22 @@ int stringToINT(char* str){
 }
 
 char* IntToString(int i){
-    char convert[10];
+    char teste[10];
+    char * convert;
 
 
-    printf("%s", itoa(i,convert,10));
+    printf("%s", itoa(i,teste,10));
 	return convert;
 }
 
 char* DateToString(DATEC data){
     char *string_data;
 
-    strcpy(string_data, IntToString(data.dia));
-  	strcat(string_data, "/");
-  	strcat(string_data, data.mes);
-  	strcat(string_data, "/");
-  	strcat(string_data, data.ano);
+    //strcpy(string_data, IntToString(data.dia));
+  	//strcat(string_data, "/");
+  	//strcat(string_data, data.mes);
+  	//strcat(string_data, "/");
+  	//strcat(string_data, data.ano);
 
   	return string_data;
 }

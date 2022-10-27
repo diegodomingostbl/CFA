@@ -6,7 +6,7 @@ struct data{
 	int mes;
 	int ano;
 };
-typedef struct data DATEC;
+typedef struct data DATAC;
 
 struct usuario{
     int id;

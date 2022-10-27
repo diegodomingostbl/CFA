@@ -5,9 +5,10 @@
 #include <stdbool.h>
 
 #include "archive.h"
+#include "funcoes.h"
 
 void main(){
-        //printf("%s", DateToString(retornaDataAtual()));
+    //printf("%s", DateToString(retornaDataAtual()));
 
     printf("%s", IntToString(1));
 }
