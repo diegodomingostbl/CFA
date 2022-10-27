@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "struct.c";
+#include "archive.h"
+#include "funcoes.h"
 
 int gravarUsuario(USER usuario){
 	char linha[2000];
-	char convert[100];
+	char id[100];
 
-	sprintf(convert, "%d", usuario.id);
+	sprintf(id, "%d", usuario.id);
 
 	FILE *file;
   	file = fopen("arquivos\\usuario.txt", "a");
@@ -17,8 +18,14 @@ int gravarUsuario(USER usuario){
   		return 0;
 	}
 
-  	strcpy(linha, convert);
+  	strcpy(linha, id);
   	strcat(linha, "|");
+	strcat(linha, usuario.nome);
+	strcat(linha, "|");
+	strcat(linha, usuario.sobrenome);
+	strcat(linha, "|");
+	strcat(linha, usuario.CPF);
+	strcat(linha, "|");
 	strcat(linha, usuario.nome);
 	strcat(linha, "|");
 	strcat(linha, usuario.login);
@@ -47,7 +54,7 @@ int procurarUsuario(int id){
 	}
 
 	while(fgets(linha, 2000, file) != NULL){
-        tokens = str_split(linha, '|');
+        tokens = strSplit(linha, '|');
         if (tokens)
         {
             int i;
@@ -67,5 +74,34 @@ int procurarUsuario(int id){
 }
 
 int retornaUltimoIdUsuario(){
+    char linha[2000];
+	char** splitLinha;
+	char convert[100];
+	int id = 0;
 
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return 0;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        splitLinha = strSplit(linha, '|');
+        if (splitLinha){
+            int i;
+            for (i = 0; *(splitLinha + i); i++)
+            {
+                if(i == 0 && (stringToINT(*(splitLinha + i)) > id)){
+                    id = stringToINT(*(splitLinha + i));
+                }
+                free(*(splitLinha + i));
+            }
+            free(splitLinha);
+        }
+	}
+	fclose(file);
+
+	return id;
 }

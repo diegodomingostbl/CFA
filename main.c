@@ -4,8 +4,10 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "archive.c";
+#include "archive.h"
 
 void main(){
-    printf("%d", retornaUltimoIdUsuario());
+        //printf("%s", DateToString(retornaDataAtual()));
+
+    printf("%s", IntToString(1));
 }

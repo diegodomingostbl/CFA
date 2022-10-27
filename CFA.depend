@@ -1,40 +1,56 @@
 # depslib dependency file v1.0
-1666825886 source:c:\repositorio\cfa\funcoes.c
+1666836859 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
 	<time.h>
-	"struct.c"
+	"struct.h"
+	"funcoes.h"
 
 1666824408 source:c:\repositorio\cfa\struct.c
 
-1666825895 source:c:\repositorio\cfa\archive.c
+1666836027 source:c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
-	"struct.c"
+	"archive.h"
+	"funcoes.h"
 
 1666824408 c:\repositorio\cfa\struct.c
 
-1666825886 c:\repositorio\cfa\funcoes.c
+1666835587 c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
 	<time.h>
-	"struct.c"
+	"struct.h"
+	"funcoes.h"
 
-1666825863 source:c:\repositorio\cfa\main.c
+1666837407 source:c:\repositorio\cfa\main.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
 	<string.h>
 	<stdbool.h>
+	"archive.h"
 
-1665868229 c:\repositorio\cfa\archive.c
+1666828475 c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
-	"struct.c"
+	"struct.h"
+	"archive.h"
 
-1666825956 source:c:\repositorio\cfa\telamenu.c
+1666835971 source:c:\repositorio\cfa\telamenu.c
+	<stdio.h>
+	<locale.h>
+	"funcoes.h"
+
+1666835035 c:\repositorio\cfa\struct.h
+
+1666836036 c:\repositorio\cfa\archive.h
+	"struct.h"
+
+1666837339 c:\repositorio\cfa\funcoes.h
+	"struct.h"
 

@@ -4,10 +4,10 @@
 #include <assert.h>
 #include <time.h>
 
-#include "struct.c";
+#include "struct.h"
+#include "funcoes.h"
 
-char ** str_split(char* a_str, const char a_delim)
-{
+char ** strSplit(char* a_str, const char a_delim){
     char** result = 0;
     size_t count = 0;
     char* tmp = a_str;
@@ -52,6 +52,30 @@ char ** str_split(char* a_str, const char a_delim)
     }
 
     return result;
+}
+
+int stringToINT(char* str){
+    return atoi(str);
+}
+
+char* IntToString(int i){
+    char convert[10];
+
+
+    printf("%s", itoa(i,convert,10));
+	return convert;
+}
+
+char* DateToString(DATEC data){
+    char *string_data;
+
+    strcpy(string_data, IntToString(data.dia));
+  	strcat(string_data, "/");
+  	strcat(string_data, data.mes);
+  	strcat(string_data, "/");
+  	strcat(string_data, data.ano);
+
+  	return string_data;
 }
 
 DATEC retornaDataAtual(){

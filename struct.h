@@ -1,3 +1,6 @@
+#ifndef STRUCT_H_INCLUDED
+#define STRUCT_H_INCLUDED
+
 struct data{
 	int dia;
 	int mes;
@@ -23,3 +26,6 @@ struct usuario{
     char estado[50];
 };
 typedef struct usuario USER;
+
+
+#endif // STRUCT_H_INCLUDED

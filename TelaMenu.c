@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-#include "funcoes.c";
+#include "funcoes.h";
 //Como fazer
 
 void teste(){
@@ -274,5 +274,7 @@ int cadastrarFuncionario(){
 	printf("Senha: ");
 	gets(usuario.senha);
 	usuario.dt_cadastro = retornaDataAtual();
+    usuario.id = retornaUltimoIdUsuario() + 1;
 
+    gravarUsuario(usuario);
 }
