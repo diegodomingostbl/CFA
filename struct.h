@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #ifndef STRUCT_H_INCLUDED
 #define STRUCT_H_INCLUDED
 
@@ -6,13 +8,13 @@ struct data{
 	int mes;
 	int ano;
 };
-typedef struct data DATAC;
+typedef struct data DATEC;
 
 struct usuario{
     int id;
     char nome[150];
     char sobrenome[150];
-    char CPF[11];
+    char CPF[12];
     char login[50];
     char senha[50];
     DATEC dt_nascimento;
@@ -26,6 +28,16 @@ struct usuario{
     char estado[50];
 };
 typedef struct usuario USER;
+
+struct userLogado{
+    int id;
+    char nome[150];
+    char login[50];
+    char senha[50];
+    char cargo[20];
+    bool logado;
+};
+typedef struct userLogado USERLOGIN;
 
 
 #endif // STRUCT_H_INCLUDED

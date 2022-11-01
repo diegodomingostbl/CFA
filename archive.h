@@ -4,7 +4,12 @@
 #define ARCHIVE_H_INCLUDED
 
 int gravarUsuario(USER usuario);
-int procurarUsuario(int id);
+USER procurarUsuarioId(int id);
+USER procurarUsuarioLogin(char* cLogin);
+USER tokenToUser(char** tokens);
 int retornaUltimoIdUsuario();
+USERLOGIN realizarLogin(USERLOGIN login, char* error);
+USERLOGIN realizarLogout(char* error);
+void retornaUsuarioLogado();
 
 #endif // ARCHIVE_H_INCLUDED

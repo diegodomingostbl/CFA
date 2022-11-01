@@ -58,25 +58,54 @@ int stringToINT(char* str){
     return atoi(str);
 }
 
-char* IntToString(int i){
-    char teste[10];
-    char * convert;
+char* IntToString(int x){
+	int length = snprintf( NULL, 0, "%d", x );
+	char* str = malloc( length + 1 );
 
+	snprintf( str, length + 1, "%d", x );
 
-    printf("%s", itoa(i,teste,10));
-	return convert;
+	return str;
+}
+
+float stringToFloat(char* str){
+    return atof(str);
+}
+
+char* floatToString(float x){
+    char* str = malloc(20 * sizeof(char));
+    sprintf(str, "%.2f", x);
+
+	return str;
 }
 
 char* DateToString(DATEC data){
-    char *string_data;
+    char * string_data;
+    string_data = malloc(15 * sizeof(char));
 
-    //strcpy(string_data, IntToString(data.dia));
-  	//strcat(string_data, "/");
-  	//strcat(string_data, data.mes);
-  	//strcat(string_data, "/");
-  	//strcat(string_data, data.ano);
+    strcpy(string_data, IntToString(data.dia));
+  	strcat(string_data, "/");
+  	strcat(string_data, IntToString(data.mes));
+  	strcat(string_data, "/");
+    strcat(string_data, IntToString(data.ano));
 
   	return string_data;
+}
+
+DATEC stringToDate(char* str){
+    DATEC data;
+    char *token = strtok(str, "/");
+
+    if(token){
+        data.dia = stringToINT(token);
+        token = strtok(NULL, "/");
+        data.mes = stringToINT(token);
+        token = strtok(NULL, "/");
+        data.ano = stringToINT(token);
+    }else{
+        data = retornaDataAtual();
+    }
+
+    return data;
 }
 
 DATEC retornaDataAtual(){

@@ -54,3 +54,41 @@
 1666837339 c:\repositorio\cfa\funcoes.h
 	"struct.h"
 
+1667060265 source:c:\diego\fca\archive.c
+	<stdio.h>
+	<stdlib.h>
+	"archive.h"
+	"funcoes.h"
+
+1667060616 c:\diego\fca\archive.h
+	"struct.h"
+
+1667028901 c:\diego\fca\struct.h
+	<stdbool.h>
+
+1666997942 c:\diego\fca\funcoes.h
+	"struct.h"
+
+1667060549 source:c:\diego\fca\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<time.h>
+	"struct.h"
+	"funcoes.h"
+
+1667060665 source:c:\diego\fca\main.c
+	<stdio.h>
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	<stdbool.h>
+	"archive.h"
+	"funcoes.h"
+
+1666994407 source:c:\diego\fca\telamenu.c
+	<stdio.h>
+	<locale.h>
+	"funcoes.h"
+

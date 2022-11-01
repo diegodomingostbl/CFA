@@ -238,7 +238,7 @@ void teste(){
     }while(menu < 1 || menu > 4);
 }
 
-int cadastrarFuncionario(){
+/*int cadastrarFuncionario(){
 	USER usuario;
 
 	printf("Cadastro de funcionário\n");
@@ -278,3 +278,4 @@ int cadastrarFuncionario(){
 
     gravarUsuario(usuario);
 }
+*/
