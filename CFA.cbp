@@ -46,6 +46,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="struct.h" />
+		<Unit filename="telaMenu.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
