@@ -9,7 +9,7 @@ USER procurarUsuarioLogin(char* cLogin);
 USER tokenToUser(char** tokens);
 int retornaUltimoIdUsuario();
 USERLOGIN realizarLogin(USERLOGIN login, char* error);
-USERLOGIN realizarLogout(char* error);
-void retornaUsuarioLogado();
+USERLOGIN realizarLogout();
+USERLOGIN retornaUsuarioLogado();
 
 #endif // ARCHIVE_H_INCLUDED

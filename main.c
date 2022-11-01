@@ -42,8 +42,7 @@ USERLOGIN login(char* error){
     return uLogin;
 }
 
-void main(){
-    setlocale(LC_ALL, "Portuguese");
+void loginMain(){
     USER usuario;
     char* error = malloc(150 * sizeof(char));
 
@@ -57,4 +56,9 @@ void main(){
     }
 
     retornaUsuarioLogado();
+}
+
+void main(){
+    setlocale(LC_ALL, "Portuguese");
+    loginMain();
 }

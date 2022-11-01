@@ -54,13 +54,13 @@
 1666837339 c:\repositorio\cfa\funcoes.h
 	"struct.h"
 
-1667060265 source:c:\diego\fca\archive.c
+1667263299 source:c:\diego\fca\archive.c
 	<stdio.h>
 	<stdlib.h>
 	"archive.h"
 	"funcoes.h"
 
-1667060616 c:\diego\fca\archive.h
+1667263874 c:\diego\fca\archive.h
 	"struct.h"
 
 1667028901 c:\diego\fca\struct.h
