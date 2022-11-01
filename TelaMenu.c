@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <locale.h>
-#include "funcoes.h";
-//Como fazer
 
-void teste(){
+#include "funcoes.h";
+#include "archive.h";
+
+void menu(){
     setlocale(LC_ALL, "Portuguese");
     int menu;
     do{
@@ -238,7 +239,7 @@ void teste(){
     }while(menu < 1 || menu > 4);
 }
 
-/*int cadastrarFuncionario(){
+int cadastrarFuncionario(){
 	USER usuario;
 
 	printf("Cadastro de funcionário\n");
@@ -278,4 +279,3 @@ void teste(){
 
     gravarUsuario(usuario);
 }
-*/
