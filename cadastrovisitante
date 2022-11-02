@@ -26,7 +26,7 @@ void main(){
 				gets(motorista.nome);
 				printf("\n Informe o RG, CPF ou CNH: ");
 				gets(motorista.motorista_rg_cpf_cnh);
-				printf("\n Bloco ou numero da casa repons·vel: ");
+				printf("\n Bloco ou numero da casa repons√°vel: ");
 				gets(motorista.bloco_casas);
 				printf("\n Dados da placa: ");
 				gets(motorista.placa);
@@ -40,7 +40,7 @@ void main(){
 				gets(motorista.nome);
 				printf("\n Informe o RG, CPF ou CNH: ");
 				gets(motorista.motorista_rg_cpf_cnh);
-				printf("\n Bloco ou numero da casa repons·vel: ");
+				printf("\n Bloco ou numero da casa repons√°vel: ");
 				gets(motorista.bloco_casas);
 				break;
 			default:
