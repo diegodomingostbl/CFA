@@ -22,7 +22,7 @@ void main(){
 			    fflush(stdout);
 			    system("cls");
 				printf("\n *Cadastro de motorista*");
-				printf("\n Informe o nome completo do visitante: ");
+				printf("\n Informe o nome completo do motorista: ");
 				gets(motorista.nome);
 				printf("\n Informe o RG, CPF ou CNH: ");
 				gets(motorista.motorista_rg_cpf_cnh);
@@ -36,7 +36,7 @@ void main(){
                 fflush(stdout);
 			    system("cls");
 				printf("\n *Cadastro de pedestre*");
-				printf("\n Informe o nome completo do visitante: ");
+				printf("\n Informe o nome completo do pedestre: ");
 				gets(motorista.nome);
 				printf("\n Informe o RG, CPF ou CNH: ");
 				gets(motorista.motorista_rg_cpf_cnh);
