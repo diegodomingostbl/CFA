@@ -1,33 +1,94 @@
 # depslib dependency file v1.0
-1665868127 source:c:\repositorio\cfa\funcoes.c
+1666836859 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
+	<time.h>
+	"struct.h"
+	"funcoes.h"
 
-1665862917 source:c:\repositorio\cfa\struct.c
+1666824408 source:c:\repositorio\cfa\struct.c
 
-1665868229 source:c:\repositorio\cfa\archive.c
+1666836027 source:c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
-	"struct.c"
+	"archive.h"
+	"funcoes.h"
 
-1665862917 c:\repositorio\cfa\struct.c
+1666824408 c:\repositorio\cfa\struct.c
 
-1665868127 c:\repositorio\cfa\funcoes.c
+1666835587 c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
+	<time.h>
+	"struct.h"
+	"funcoes.h"
 
-1665868307 source:c:\repositorio\cfa\main.c
+1666837407 source:c:\repositorio\cfa\main.c
 	<stdio.h>
+	<ctype.h>
 	<locale.h>
 	<string.h>
-	"struct.c"
+	<stdbool.h>
+	"archive.h"
 
-1665868229 c:\repositorio\cfa\archive.c
+1666828475 c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
-	"struct.c"
+	"struct.h"
+	"archive.h"
+
+1666835971 source:c:\repositorio\cfa\telamenu.c
+	<stdio.h>
+	<locale.h>
+	"funcoes.h"
+
+1666835035 c:\repositorio\cfa\struct.h
+
+1666836036 c:\repositorio\cfa\archive.h
+	"struct.h"
+
+1666837339 c:\repositorio\cfa\funcoes.h
+	"struct.h"
+
+1667263299 source:c:\diego\fca\archive.c
+	<stdio.h>
+	<stdlib.h>
+	"archive.h"
+	"funcoes.h"
+
+1667263874 c:\diego\fca\archive.h
+	"struct.h"
+
+1667028901 c:\diego\fca\struct.h
+	<stdbool.h>
+
+1666997942 c:\diego\fca\funcoes.h
+	"struct.h"
+
+1667060549 source:c:\diego\fca\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<time.h>
+	"struct.h"
+	"funcoes.h"
+
+1667060665 source:c:\diego\fca\main.c
+	<stdio.h>
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	<stdbool.h>
+	"archive.h"
+	"funcoes.h"
+
+1666994407 source:c:\diego\fca\telamenu.c
+	<stdio.h>
+	<locale.h>
+	"funcoes.h"
 

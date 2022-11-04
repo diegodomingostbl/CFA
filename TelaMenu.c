@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <locale.h>
-//Como fazer
 
-void main (){
+#include "funcoes.h";
+#include "archive.h";
+
+void menu(){
     setlocale(LC_ALL, "Portuguese");
     int menu;
     do{
@@ -87,7 +89,7 @@ void main (){
                     system("cls");
                     fflush(stdin);
                     do{
-                        
+
                         printf(" Escolha o que deseja alterar \n");
                         printf(" [1] Dados de funcionÃ¡rio\n");
                         printf(" [2] Dados de casa\n");
@@ -147,7 +149,7 @@ void main (){
                         system("cls");
                         fflush(stdin);
                         do{
-                            
+
                             printf(" Escolha qual relatorio deseja visualizar \n");
                             printf(" [1] FuncionÃ¡rios\n");
                             printf(" [2] Casas\n");
@@ -235,4 +237,45 @@ void main (){
                 }
             }
     }while(menu < 1 || menu > 4);
+}
+
+int cadastrarFuncionario(){
+	USER usuario;
+
+	printf("Cadastro de funcionário\n");
+	printf("Nome: ");
+	gets(usuario.nome);
+	printf("Sobrenome: ");
+	gets(usuario.sobrenome);
+	printf("CPF (sem pontuação)");
+	gets(usuario.CPF);
+	printf("Data de nascimento: \n");
+	printf("	Dia: ");
+	scanf("%d", &usuario.dt_nascimento.dia);
+	printf("	Mês: ");
+	scanf("%d", &usuario.dt_nascimento.mes);
+	printf("	Ano: ");
+	scanf("%d", &usuario.dt_nascimento.ano);
+	printf("Salário: ");
+	scanf("%f", &usuario.salario);
+	printf("Cargo: ");
+	gets(usuario.cargo);
+	printf("Endereço: ");
+	gets(usuario.endereco);
+	printf("Número: ");
+	scanf("%d", &usuario.numeroDaCasa);
+	printf("Bairro: ");
+	gets(usuario.bairro);
+	printf("Cidade: ");
+	gets(usuario.cidade);
+	printf("UF: ");
+	gets(usuario.estado);
+	printf("Login: ");
+	gets(usuario.login);
+	printf("Senha: ");
+	gets(usuario.senha);
+	usuario.dt_cadastro = retornaDataAtual();
+    usuario.id = retornaUltimoIdUsuario() + 1;
+
+    gravarUsuario(usuario);
 }

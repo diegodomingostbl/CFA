@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <time.h>
 
-char ** str_split(char* a_str, const char a_delim)
-{
+#include "struct.h"
+#include "funcoes.h"
+
+char ** strSplit(char* a_str, const char a_delim){
     char** result = 0;
     size_t count = 0;
     char* tmp = a_str;
@@ -51,28 +54,68 @@ char ** str_split(char* a_str, const char a_delim)
     return result;
 }
 
-/*
-int main()
-{
-    char months[] = "diego cesar domingos|Teste|12345";
-    char** tokens;
+int stringToINT(char* str){
+    return atoi(str);
+}
 
-    printf("months=[%s]\n\n", months);
+char* IntToString(int x){
+	int length = snprintf( NULL, 0, "%d", x );
+	char* str = malloc( length + 1 );
 
-    tokens = str_split(months, '|');
+	snprintf( str, length + 1, "%d", x );
 
-    if (tokens)
-    {
-        int i;
-        for (i = 0; *(tokens + i); i++)
-        {
-            printf("month=[%s]\n", *(tokens + i));
-            free(*(tokens + i));
-        }
-        printf("\n");
-        free(tokens);
+	return str;
+}
+
+float stringToFloat(char* str){
+    return atof(str);
+}
+
+char* floatToString(float x){
+    char* str = malloc(20 * sizeof(char));
+    sprintf(str, "%.2f", x);
+
+	return str;
+}
+
+char* DateToString(DATEC data){
+    char * string_data;
+    string_data = malloc(15 * sizeof(char));
+
+    strcpy(string_data, IntToString(data.dia));
+  	strcat(string_data, "/");
+  	strcat(string_data, IntToString(data.mes));
+  	strcat(string_data, "/");
+    strcat(string_data, IntToString(data.ano));
+
+  	return string_data;
+}
+
+DATEC stringToDate(char* str){
+    DATEC data;
+    char *token = strtok(str, "/");
+
+    if(token){
+        data.dia = stringToINT(token);
+        token = strtok(NULL, "/");
+        data.mes = stringToINT(token);
+        token = strtok(NULL, "/");
+        data.ano = stringToINT(token);
+    }else{
+        data = retornaDataAtual();
     }
 
-    return 0;
+    return data;
 }
-*/
+
+DATEC retornaDataAtual(){
+	DATEC data;
+  	time_t t = time(NULL);
+  	struct tm tm = *localtime(&t);
+
+  	data.dia = tm.tm_mday;
+  	data.mes = tm.tm_mon + 1;
+  	data.ano = tm.tm_year + 1900;
+
+  	return data;
+}

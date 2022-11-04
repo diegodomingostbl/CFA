@@ -31,9 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="TelaMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="archive.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="archive.h" />
+		<Unit filename="funcoes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="struct.h" />
+		<Unit filename="telaMenu.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
