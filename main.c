@@ -5,13 +5,13 @@
 #include <stdbool.h>
 
 typedef struct{
-    char nome[30], dia[3], mes[3], ano[5];
+    char nome[50], dia[3], mes[3], ano[5];
     float valor;
     bool contaValida;
 }c_pagar;
 
 typedef struct{
-    char nome[30], dia[3], mes[3], ano[5];
+    char nome[50], dia[3], mes[3], ano[5];
     float valor;
     bool contaValida;
 }c_receber;
@@ -20,43 +20,30 @@ typedef struct{
 c_receber criarContaReceber();
 c_pagar criarContaPagar();
 bool textoVazio(char texto[]);
+int menuInicial();
 
 void main(){
 
     setlocale (LC_ALL, "portuguese");
-    int tam = 450, count_p = 0, count_r = 0, cp = 0, cr = 0, op, retorno;
-    char resposta, nome[30];
-    float total_desp = 0, total_rec = 0;
+    int tam = 450, count_p = 0, count_r = 0, cp = 0, cr = 0, op;
     c_pagar pagar[100];
     c_receber receber[100];
 
 
     do{
-        printf("**********************************************\n");
-        printf("*     CFC - CONTROLE DE FLUXO CONDOMINIO     *\n");
-        printf("**********************************************\n");
-        printf("\n******************CADASTROS*******************\n\n");
-        printf("[1] CADASTRAR CONTAS A PAGAR\n");
-        printf("[2] CADASTRAR CONTAS A RECEBER\n");
-        printf("\n******************CONSULTAS*******************\n\n");
-        printf("[3] CONSULTAR CONTAS A PAGAR\n");
-        printf("[4] CONSULTAR CONTAS A RECEBER\n");
-        printf("[5] CONSULTAR RESULTADO LIQUIDO MÊS\n");
-        printf("[6] CONSULTAR RESULTADO LIQUIDO ANO\n");
-        printf("\n******************ALTERAÇÕES******************\n\n");
-        printf("[7] ALTERAR CADASTRO DE CONTAS A PAGAR\n");
-        printf("[8] ALTERAR CADASTRO DE CONTAS A RECEBER\n");
-        printf("[0] SAIR DO SISTEMA\n");
-        printf("\nDigite a opção desejada: ");
-        scanf("%d", &op);
+        op = menuInicial();
 
         switch(op){
-            case 1: // o usuario cadastra contas a pagar do cliente
+
+        case 1:{ // o usuario cadastra contas a pagar do cliente
+            char resposta;
+
+            system("cls");
             printf("\nPara efetuar o cadastro de contas a pagar digite os dados abaixo: \n");
             do{
-                do {
+                do{
                     pagar[count_p] = criarContaPagar(); //chamada funcao criarContaPagar()
-                }while(!pagar[count_p].contaValida);
+                }while(!pagar[count_p].contaValida); //
 
                 printf("\nDeseja fazer outro cadastro (s/n)?: ");
                 resposta = getche();
@@ -71,11 +58,15 @@ void main(){
             system("pause");
             system("cls"); // limpa a tela
         break;
+        }// fim case 1
 
-        case 2: // o usuario cadastra contas a receber do cliente
+        case 2:{ // o usuario cadastra contas a receber do cliente
+            char resposta;
+
+            system("cls");
             printf("\nPara efetuar um cadastro de contas a receber digite os dados abaixo: \n");
             do{
-                do {
+                do{
                     receber[count_r] = criarContaReceber();//chamada funcao criarContaReceber()
                 }while(!receber[count_r].contaValida);
 
@@ -88,65 +79,88 @@ void main(){
                 cr++;
 
             }while(resposta == 's' && count_r < tam);
+
+            system("pause");
+            system("cls");
         break;
+        }// fim case 2
 
-        case 3:{
-             // usuario consulta contas a pagar
+        case 3:{// usuario consulta contas a pagar
+        system("cls");
         char mes[3], ano[5];
-        int retorno2;
+        int retorno, retorno2;
+        float total_desp = 0;
 
-            if (cp == 0)
+            if(cp == 0){
                 printf("\nA empresa não possui contas a pagar\n\n");
+                system ("pause");
+                system("cls");
+                break;
+            }
+            printf("\nPara consultar contas a pagar digite as informações abaixo: \n");
 
-            else{
+            if(cp != 0){
                 fflush(stdin);
                 printf("\nInforme o mês: ");
                 scanf("%s", &mes);
                 fflush(stdin);
                 printf("\nInforme o ano: ");
                 scanf("%s", &ano);
-                printf("\n****************CONTAS A PAGAR****************\n");
+                printf("\n****************CONTAS A PAGAR****************\n\n");
 
                 int existeConta = 0;
-                for (int i = 0; i < cp; i++){
+                for(int i = 0; i < cp; i++){
                     retorno = strcmp(pagar[i].mes,mes); // compara a string e se for igual resultado será 0
                     retorno2 = strcmp(pagar[i].ano,ano);
 
-                    if (retorno == 0 && retorno2 == 0){
+                    if(retorno == 0 && retorno2 == 0){
                         printf("\n**********************************************\n");
                         printf("\nFornecedor:%s \n", pagar[i].nome);
                         printf("Data da compra:%02s/%02s/%04s \n", pagar[i].dia, pagar[i].mes, pagar[i].ano);
-                        printf("Valor da compra: R$ %.2f \n", pagar[i].valor);
+                        printf("Valor da compra: R$ %.2f \n\n", pagar[i].valor);
                         total_desp = total_desp + pagar[i].valor;
                         existeConta++;
                     }
                  }
-                if (existeConta == 0)
-                        printf("não possui despesas para o mes %s e ano %s \n", mes, ano);
+                if(existeConta == 0){
+                    printf("Você não possui despesas para o periodo %s/%s \n\n", mes, ano);
+                    system ("pause");
+                    system("cls");
+                }
              }
-                if (total_desp > 0)
+                if(total_desp > 0){
                     printf("\n**********************************************\n");
-                    printf("\nO total de despesas para o mes %s é R$ %.2f\n\n", mes, total_desp);
+                    printf("\nO total de despesas para o periodo %s/%s é R$ %.2f\n\n", mes, ano, total_desp);
                     total_desp = 0;
                     system ("pause");
+                    system("cls");
+                }
             break;
         }// FIM case3
 
         case 4:{ // usuario consulta contas a receber
+            system("cls");
             char mes[3], ano[5];
-            int retorno2;
+            int retorno, retorno2;
+            float total_rec = 0;
 
-                if (cr == 0)
+                if(cr == 0){
                     printf("\nA empresa não possui contas a receber\n\n");
+                    system ("pause");
+                    system("cls");
+                    break;
+                }
 
-                else{
+                printf("\nPara consultar contas a receber digite as informações abaixo: \n");
+
+                if(cr !=0){
                     fflush(stdin);
                     printf("\nInforme o mês: ");
                     scanf("%s", &mes);
                     fflush(stdin);
                     printf("\nInforme o ano: ");
                     scanf("%s", &ano);
-                    printf("\n***************CONTAS A RECEBER***************\n");
+                    printf("\n***************CONTAS A RECEBER***************\n\n");
 
                     int existeConta = 0;
                     for (int i = 0; i < cr; i++){
@@ -163,23 +177,34 @@ void main(){
                         }
                      }
 
-                if (existeConta == 0)
-                        printf("Você não possui contas a receber no mes %s e ano %s \n\n", mes, ano);
+                    if(existeConta == 0){
+                        printf("Você não possui contas a receber no periodo %s/%s \n\n", mes, ano);
+                        system ("pause");
+                        system("cls");
+                    }
                 }
-                if (total_rec > 0){
+
+                if(total_rec > 0){
                     printf("\n**********************************************\n");
-                    printf("\nO total de receita para o mes %s é R$ %.2f\n\n", mes, total_rec);
+                    printf("\nO total de receita para o periodo %s/%s é R$ %.2f\n\n", mes, ano, total_rec);
                     total_rec = 0;
                     system ("pause");
+                    system("cls");
                 }
-                break;
-            }// FIM case4
-
+        break;
+        }// FIM case4
 
         case 5:{// cliente consulta resultado liquido do MES
-             char mes[3], ano[5];
-             float t_cr = 0, t_cp = 0;
-             int ret_Pm, ret_Pa, ret_Rm, ret_Ra;
+            system("cls");
+            char mes[3], ano[5];
+            float t_cr = 0, t_cp = 0;
+            int ret_Pm, ret_Pa, ret_Rm, ret_Ra;
+
+            if(cr == 0 && cp == 0){
+               printf("\nVocê não possui contas cadastradas\n\n");
+               system ("pause");
+               break;
+             }
 
              printf("\n************RESULTADO LIQUIDO MÊS************\n\n");
              fflush(stdin);
@@ -196,7 +221,7 @@ void main(){
                         t_cr += receber[i].valor;
                  }
 
-             if (cp != 0)
+             if(cp != 0)
                 for (int i = 0; i < cp; i++){
                     ret_Pm = strcmp(pagar[i].mes,mes);
                     ret_Pa = strcmp(pagar[i].ano,ano); // STRCMP compara a string e for igual resultado será 0
@@ -204,25 +229,32 @@ void main(){
                     t_cp += pagar[i].valor;
                 }
 
-             if(cr == 0 && cp == 0)
-               printf("\nVocê não possui contas cadastradas\n\n");
-
-             if (t_cr !=0 || t_cp != 0){
-                printf("\nO resultado liquido do mês %s do ano %s é: R$ %.2f\n\n", mes, ano, t_cr - t_cp);
+             if(t_cr !=0 || t_cp != 0){
+                printf("\n**********************************************\n");
+                printf("\nO resultado liquido do periodo %s/%s é: R$ %.2f\n\n", mes, ano, t_cr - t_cp);
                 system ("pause");
+                system("cls");
              }
-
 
              else{
-                printf("\nVocê não possui contas para o periodo %s/%s\n", mes, ano);
+                printf("\nVocê não possui contas para o periodo %s/%s\n\n", mes, ano);
                 system ("pause");
+                system("cls");
              }
-             break;
-       } //case 5
+        break;
+        } //case 5
+
         case 6:{ // cliente consulta resultado liquido do ANO
-             char ano[5];
-             float t_cr = 0, t_cp = 0;
-             int ret_Pa, ret_Ra;
+            system("cls");
+            char ano[5];
+            float t_cr = 0, t_cp = 0;
+            int ret_Pa, ret_Ra;
+
+             if(cr == 0 && cp == 0){
+               printf("\nVocê não possui contas cadastradas\n");
+               system ("pause");
+               break;
+             }
 
              printf("\n************RESULTADO LIQUIDO ANO************\n\n");
              fflush(stdin);
@@ -243,31 +275,32 @@ void main(){
                     t_cp += pagar[i].valor;
                 }
 
-             if(cr == 0 && cp == 0){
-               printf("\nVocê não possui contas cadastradas\n");
-               system ("pause");
-             }
-
-
-             if (t_cr !=0 || t_cp != 0){
+             if(t_cr !=0 || t_cp != 0){
+                printf("\n**********************************************\n");
                 printf("\nO resultado liquido do ano %s é: R$ %.2f\n\n", ano, t_cr - t_cp);
                 system ("pause");
+                system("cls");
              }
 
              else{
                 printf("\nVocê não possui contas para o ano %s\n\n", ano);
                 system ("pause");
+                system("cls");
              }
-             break;
+
+        break;
         }// case6
 
         case 7:{// Usuario altera cadastro contas a pagar
-            char mes[3], ano[5];
+
+            system("cls");
+            char mes[3], ano[5], nome [50], resposta;
             int r_Pm, r_Pa, achou = 0;
 
             if (count_p == 0){
                 printf("\nVocê ainda não cadastrou nenhuma conta a pagar\n\n");
                 system ("pause");
+                system("cls");
             }
 
             else{
@@ -287,7 +320,7 @@ void main(){
                        r_Pm = strcmp(pagar[i].mes,mes);
                        r_Pa = strcmp(pagar[i].ano,ano);
 
-                        if (strcmp(nome, pagar[i].nome) == 0 && r_Pm == 0 && r_Pa == 0){
+                        if(strcmp(nome, pagar[i].nome) == 0 && r_Pm == 0 && r_Pa == 0){
                             achou = 1;
                             printf("\nFornecedor:%s \n", pagar[i].nome);
                             printf("Data da compra:%02s/%02s/%04s \n", pagar[i].dia, pagar[i].mes, pagar[i].ano);
@@ -323,22 +356,26 @@ void main(){
                                 printf("Data da compra:%02s/%02s/%04s \n", pagar[i].dia, pagar[i].mes, pagar[i].ano);
                                 printf("Valor da compra: R$ %.2f \n", pagar[i].valor);
                                 system("pause");
+                                system("cls");
                             }
                             else(resposta != 's');
                             break;
                         }
                     }
-                            if(achou == 0){
-                                printf("\nNenhum fornecedor com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
-                                system ("pause");
-                                break;
+
+                        if(achou == 0){
+                            printf("\nNenhum fornecedor com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
+                            system ("pause");
+                            system("cls");
+                            break;
                         }
             }
-            break;
+        break;
         } //case 7
 
         case 8:{// Usuario altera cadastro contas a receber
-            char mes[3], ano[5];
+            system("cls");
+            char mes[3], ano[5], nome[50], resposta;
             int r_Rm, r_Ra, achou = 0;
 
             if (count_r == 0){
@@ -400,23 +437,23 @@ void main(){
                             printf("Data de recebimento:%02s/%02s/%04s \n", receber[i].dia, receber[i].mes, receber[i].ano);
                             printf("Valor a receber:R$ %.2f \n", receber[i].valor);
                             system ("pause");
+                            system("cls");
                         }
-                         else(resposta != 's');
-                            break;
+                        else(resposta != 's');
+                        break;
                     }
                 }
 
-                        if(achou == 0){
-                            printf("\nNenhum cliente com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
-                            system ("pause");
-                            break;
-                        }
-
-
+                    if(achou == 0){
+                        printf("\nNenhum cliente com o nome %s no periodo %s/%s foi encontrado.\n\n", nome, mes, ano);
+                        system ("pause");
+                        system("cls");
+                        break;
+                    }
             }
-            break;
+        break;
         } //case 8
-    }// switch
+        }// switch
     }while (op != 0);
 }
 
@@ -486,11 +523,34 @@ c_pagar criarContaPagar(){
     return contaPagar;
 }
 
-_Bool textoVazio(char texto[]){
+bool textoVazio(char texto[]){
 //    if(texto[0] == '\0'){
 //        return true;
 //    }else {
 //        return false;
 //    }
     return texto[0] == '\0';
+}
+
+int menuInicial(){
+    int opcao;
+
+        printf("**********************************************\n");
+        printf("*     CFC - CONTROLE DE FLUXO CONDOMINIO     *\n");
+        printf("**********************************************\n");
+        printf("\n******************CADASTROS*******************\n\n");
+        printf("[1] CADASTRAR CONTAS A PAGAR\n");
+        printf("[2] CADASTRAR CONTAS A RECEBER\n");
+        printf("\n******************CONSULTAS*******************\n\n");
+        printf("[3] CONSULTAR CONTAS A PAGAR\n");
+        printf("[4] CONSULTAR CONTAS A RECEBER\n");
+        printf("[5] CONSULTAR RESULTADO LIQUIDO MÊS\n");
+        printf("[6] CONSULTAR RESULTADO LIQUIDO ANO\n");
+        printf("\n******************ALTERAÇÕES******************\n\n");
+        printf("[7] ALTERAR CADASTRO DE CONTAS A PAGAR\n");
+        printf("[8] ALTERAR CADASTRO DE CONTAS A RECEBER\n");
+        printf("[0] SAIR DO SISTEMA\n");
+        printf("\nDigite a opção desejada: ");
+        scanf("%d", &opcao);
+        return opcao;
 }
