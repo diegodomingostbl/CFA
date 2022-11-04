@@ -1,21 +1,29 @@
 #include <stdio.h>
 #include <locale.h>
+#include <ctype.h>
 
+#include "telaMenu.h";
 #include "funcoes.h";
-#include "archive.h";
+#include "dao_usuario.h";
+#include "view_usuario.c";
 
 void menu(){
     setlocale(LC_ALL, "Portuguese");
     int menu;
     do{
-        printf("****Menu inicial CFA******\n");
-        printf("[1] Cadastro\n");
-        printf("[2] AlteraÃ§Ã£o de cadastro\n");
-        printf("[3] RelatÃ³rios\n");
-        printf("[4] Entrada de visitante\n");
-        printf(" ");
+        system("cls");
+        printf("CFA - Controle de fluxo automotivo\n");
+        printf("[1] - Cadastro\n");
+        printf("[2] - Alteração de cadastro\n");
+        printf("[3] - Relatórios\n");
+        printf("[4] - Entrada de visitante\n");
+        printf("[0] - Logout\n");
+        printf("Escolha um menu: : ");
         scanf("%i", &menu);
         switch (menu){
+            case 0:
+                    realizarLogout();
+                    break;
             case 1: {
                 //Cadastro
                 int menucadastro;
@@ -103,7 +111,7 @@ void menu(){
                             case 1: {
                                 //AlteraÃ§Ã£o de funcionarios
                                 system("cls");
-                                printf("AlteraÃ§Ã£o de funcionÃ¡rios");
+                                alterarFuncionario();
                                 break;
                             }
                             case 2: {
@@ -236,7 +244,7 @@ void menu(){
                     printf ("\n***Comando invalido***\n\n");
                 }
             }
-    }while(menu < 1 || menu > 4);
+    }while(menu != 0);
 }
 
 int cadastrarFuncionario(){
@@ -278,4 +286,43 @@ int cadastrarFuncionario(){
     usuario.id = retornaUltimoIdUsuario() + 1;
 
     gravarUsuario(usuario);
+}
+
+void alterarFuncionario(){
+    int opcao;
+    int repitir = 0;
+
+    do{
+        system("cls");
+        printf("Alterar funcionário\n");
+        printf("Deseja buscar o funcionário por: \n");
+        printf("[1] - Código interno\n");
+        printf("[2] - CPF\n");
+        printf("[3] - Login\n");
+        printf("[4] - Nome\n");
+        printf("[0] - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1: //Buscar usuario por id
+                repitir = alterarFuncionarioPorID();
+                break;
+            case 2:
+                //buscar por cpf
+                break;
+            case 3:
+                //buscar por login
+                break;
+            case 4:
+                //buscar por nome
+                break;
+            default:
+                printf("Opção inválida\n");
+        }
+    }while(opcao != 0 || repitir == 1);
 }

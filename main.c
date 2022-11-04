@@ -3,9 +3,11 @@
 #include <locale.h>
 #include <string.h>
 #include <stdbool.h>
+#include <windows.h>
 
-#include "archive.h"
+#include "dao_usuario.h"
 #include "funcoes.h"
+#include "telaMenu.h"
 
 USERLOGIN usuarioLogado;
 
@@ -14,9 +16,10 @@ USERLOGIN login(char* error){
     char c;
     int a=0;
 
-    printf("Entre com o login: ");
+    fflush(stdin);
+    printf("Login: ");
     gets(uLogin.login);
-    printf("Entre com a senha: ");
+    printf("Senha: ");
     do{
         c=getch();
         if(isprint(c)){
@@ -42,23 +45,51 @@ USERLOGIN login(char* error){
     return uLogin;
 }
 
-void loginMain(){
+USERLOGIN loginMain(char* error){
     USER usuario;
-    char* error = malloc(150 * sizeof(char));
-
     usuarioLogado = login(error);
-    printf("\n");
-
-    if(usuarioLogado.logado == true){
-        printf("Usuário %s logado com sucesso\n", usuarioLogado.nome);
-    }else{
-        printf("Error: %s\n", error);
-    }
-
-    retornaUsuarioLogado();
+    return usuarioLogado;
 }
 
-void main(){
+void main(int argc, char *argv[ ]){
+    SetConsoleTitle("CFA - Controle de fluxo automotivo");
     setlocale(LC_ALL, "Portuguese");
-    loginMain();
+    int opcao = 0;
+    char* error = malloc(150 * sizeof(char));
+    USERLOGIN usuarioLogadoLocal;
+
+
+    do{
+        system("cls");
+
+        printf("           _______________ \n");
+        printf("          / ____/ ____/   |\n");
+        printf("         / /   / /_  / /| |\n");
+        printf("        / /___/ __/ / ___ |\n");
+        printf("        \\____/_/   /_/  |_|\n");
+        printf("                       \n");
+        printf("    Controle de fluxo automotivo\n");
+        printf("[1] - Realizar login\n");
+        printf("[0] - Sair\n");
+        printf("Digite uma opção: ");
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 1:
+                do{
+                    system("cls");
+                    printf("CFA - Controle de fluxo automotivo\n");
+                    usuarioLogadoLocal = loginMain(error);
+                    if(usuarioLogadoLocal.logado){
+                        menu();
+                    }else{
+                        printf("\n\n------------------------------\n");
+                        printf("| Ocorreu um erro no sistema |\n| %s  |", error);
+                        printf("\n------------------------------\n\n");
+                        system("pause");
+                    }
+                }while(usuarioLogadoLocal.logado == false);
+                break;
+        }
+    }while(opcao != 0);
 }

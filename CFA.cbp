@@ -5,6 +5,7 @@
 		<Option title="CFA" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="ControllerUsuario/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/CFA" prefix_auto="1" extension_auto="1" />
@@ -31,13 +32,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="TelaMenu.c">
+		<Unit filename="dao_usuario.c">
 			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerUsuario/" />
 		</Unit>
-		<Unit filename="archive.c">
-			<Option compilerVar="CC" />
+		<Unit filename="dao_usuario.h">
+			<Option virtualFolder="ControllerUsuario/" />
 		</Unit>
-		<Unit filename="archive.h" />
 		<Unit filename="funcoes.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,7 +47,19 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="struct.h" />
+		<Unit filename="telaMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="telaMenu.h" />
+		<Unit filename="view_usuario.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerUsuario/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="view_usuario.h">
+			<Option virtualFolder="ControllerUsuario/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

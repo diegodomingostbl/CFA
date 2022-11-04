@@ -3,5 +3,6 @@
 
 void menu();
 int cadastrarFuncionario();
+void alterarFuncionario();
 
 #endif // TELAMENU_H_INCLUDED

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "archive.h"
+#include "dao_usuario.h"
 #include "funcoes.h"
 
 USERLOGIN usuarioLogado;
@@ -191,7 +191,7 @@ USERLOGIN realizarLogin(USERLOGIN login, char* error){
     usuario = procurarUsuarioLogin(login.login);
 
     if(usuario.id != 0 && strcmp(usuario.senha, login.senha) == 0){
-        login.id = usuario.id;
+        login.idUsuario = usuario.id;
         strcpy(login.nome, usuario.nome);
         strcpy(login.login, usuario.login);
         strcpy(login.senha, "");
@@ -207,7 +207,7 @@ USERLOGIN realizarLogin(USERLOGIN login, char* error){
 }
 
 USERLOGIN realizarLogout(){
-    usuarioLogado.id = 0;
+    usuarioLogado.idUsuario = 0;
     strcpy(usuarioLogado.cargo, "");
     strcpy(usuarioLogado.login, "");
     strcpy(usuarioLogado.nome, "");

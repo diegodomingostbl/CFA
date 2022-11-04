@@ -30,7 +30,7 @@ struct usuario{
 typedef struct usuario USER;
 
 struct userLogado{
-    int id;
+    int idUsuario;
     char nome[150];
     char login[50];
     char senha[50];
@@ -41,3 +41,4 @@ typedef struct userLogado USERLOGIN;
 
 
 #endif // STRUCT_H_INCLUDED
+
