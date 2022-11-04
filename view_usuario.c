@@ -41,6 +41,67 @@ int alterarFuncionarioPorID(){
                     printf("Qual informação deseja alterar ? ");
                     scanf("%d", &opcao);
 
+                    switch(opcao){
+                        case 0:
+
+                            break;
+                        case 1:
+                            //nome
+                            printf("Nome: ");
+                            gets(usuarioAlterado.nome);
+                            break;
+                        case 2:
+                            //sobrenome
+                            printf("Sobrenome: ");
+                            gets(usuarioAlterado.sobrenome);
+                            break;
+                        case 3:
+                            //cpf
+                            printf("CPF (sem pontuação): ");
+                            gets(usuarioAlterado.CPF);
+                            break;
+                        case 4:
+                            //data nascimento
+                            break;
+                        case 5:
+                            //salario
+                            printf("Salário: ");
+                            scanf("%f", &usuarioAlterado.salario);
+                            break;
+                        case 6:
+                            //cargo
+                            printf("Cargo: ");
+                            gets(usuarioAlterado.cargo);
+                            break;
+                        case 7:
+                            //endereco
+
+                            break;
+                        case 8:
+                            //numero
+
+                            break;
+                        case 9:
+                            //bairro
+                            break;
+                        case 10:
+                            //cidade
+
+                            break;
+
+                        case 11:
+                            //uf
+
+                            break;
+                        case 12:
+                            //login
+
+                            break;
+                        case 13:
+                            //senha
+
+                            break;
+                    }
 
                 }while(opcao != 0);
 
@@ -56,3 +117,29 @@ int alterarFuncionarioPorID(){
 
     return 0;
 }
+
+/*
+	printf("Data de nascimento: \n");
+	printf("	Dia: ");
+	scanf("%d", &usuario.dt_nascimento.dia);
+	printf("	Mês: ");
+	scanf("%d", &usuario.dt_nascimento.mes);
+	printf("	Ano: ");
+	scanf("%d", &usuario.dt_nascimento.ano);
+
+
+	printf("Endereço: ");
+	gets(usuario.endereco);
+	printf("Número: ");
+	scanf("%d", &usuario.numeroDaCasa);
+	printf("Bairro: ");
+	gets(usuario.bairro);
+	printf("Cidade: ");
+	gets(usuario.cidade);
+	printf("UF: ");
+	gets(usuario.estado);
+	printf("Login: ");
+	gets(usuario.login);
+	printf("Senha: ");
+	gets(usuario.senha);
+*/

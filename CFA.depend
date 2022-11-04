@@ -78,28 +78,24 @@
 	"struct.h"
 	"funcoes.h"
 
-1667593722 source:c:\diego\fca\main.c
+1667597751 source:c:\diego\fca\main.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
 	<string.h>
 	<stdbool.h>
 	<windows.h>
-	"dao_usuario.h"
-	"funcoes.h"
-	"telaMenu.h"
-	"login.h"
 
-1667593486 source:c:\diego\fca\telamenu.c
+1667594088 source:c:\diego\fca\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
 	"telaMenu.h"
 	"funcoes.h"
 	"dao_usuario.h"
-	"view_usuario.c"
+	"view_usuario.h"
 
-1667531354 c:\diego\fca\telamenu.h
+1667602651 c:\diego\fca\telamenu.h
 
 1667442315 source:c:\diego\fca\dao_usuario.c
 	<stdio.h>
@@ -155,7 +151,7 @@
 	"funcoes.h"
 	"telaMenu.h"
 
-1667594073 source:c:\diego\fca\view_usuario.c
+1667601716 source:c:\diego\fca\view_usuario.c
 	<stdio.h>
 	<ctype.h>
 	"view_usuario.h"
