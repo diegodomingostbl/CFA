@@ -5,7 +5,7 @@
 #include "telaMenu.h";
 #include "funcoes.h";
 #include "dao_usuario.h";
-#include "view_usuario.c";
+#include "view_usuario.h";
 
 void menu(){
     setlocale(LC_ALL, "Portuguese");
