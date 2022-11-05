@@ -5,12 +5,12 @@
 #include <stdbool.h>
 #include <windows.h>
 
-/*
+
 void main(){
     loginMain();
 }
-*/
 
+/*
 typedef struct{
     char nome[50], dia[3], mes[3], ano[5];
     float valor;
@@ -561,3 +561,6 @@ int menuInicial(){
         scanf("%d", &opcao);
         return opcao;
 }
+
+
+*/

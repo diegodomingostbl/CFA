@@ -1,2 +1,4 @@
-1|Ana|Grossi|49016333843|ana|123|4/4/2000|28/10/2022|1234.21|admin|Avenida jos�|140|nova|rincao|SP
-2|diego|Cesar|49016333843|123456|123|4/4/2000|28/10/2022|1234,23|admin|Avenida jos� Carlos |140|nova ��o|Araraquara�ƶ|SP
+1|diego|testeeee|49016333843|ana|123|4/4/2000|28/10/2022|1234,00|admin|Avenida jos‚|15178096|nova|rincao|SP
+2|diego|diego|49016333843|123456|123|4/4/2000|28/10/2022|1234,23|admin|Avenida jos‚ Carlos |7447232|nova ‡Æo|Araraquara Æ¶|SP
+3|Ana|Grossi|49016333843|ana|123|4/4/2000|28/10/2022|1234.21|admin|Avenida jos‚|140|nova|rincao|SP
+4|diego|Cesar|49016333843|123456|123|4/4/2000|28/10/2022|1234,23|admin|Avenida jos‚ Carlos |140|nova ‡Æo|Araraquara Æ¶|SP

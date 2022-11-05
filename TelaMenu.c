@@ -18,7 +18,7 @@ void menu(){
         printf("[3] - RelatÛrios\n");
         printf("[4] - Entrada de visitante\n");
         printf("[0] - Logout\n");
-        printf("Escolha um menu: : ");
+        printf("Escolha um menu: ");
         scanf("%i", &menu);
         switch (menu){
             case 0:
@@ -94,18 +94,17 @@ void menu(){
                 case 2: {
                     //Altera√ß√£o de cadastro
                     int menualterar;
-                    system("cls");
-                    fflush(stdin);
                     do{
-
-                        printf(" Escolha o que deseja alterar \n");
-                        printf(" [1] Dados de funcion√°rio\n");
-                        printf(" [2] Dados de casa\n");
-                        printf(" [3] Dados de ve√≠culo\n");
-                        printf(" [4] Dados de conta a pagar\n");
-                        printf (" [5] Dados de conta a receber\n");
-                        printf(" [6] Voltar");
-                        printf ("  ");
+                        system("cls");
+                        fflush(stdin);
+                        printf("Escolha o que deseja alterar \n");
+                        printf(" [1] - Dados de funcion·rio\n");
+                        printf(" [2] - Dados de casa\n");
+                        printf(" [3] - Dados de veÌculo\n");
+                        printf(" [4] - Dados de conta a pagar\n");
+                        printf(" [5] - Dados de conta a receber\n");
+                        printf(" [0] - Voltar\n");
+                        printf("Escolha um menu: ");
                         scanf("%i", &menualterar);
                         switch (menualterar){
                             case 1: {
@@ -148,7 +147,7 @@ void menu(){
                                 printf("Op√ß√£o inv√°lida tente novamente");
                             }
                         }
-                    }while(menualterar < 1 || menualterar >= 6);
+                    }while(menualterar != 0);
                     break;
                 }
                 case 3:{
@@ -290,7 +289,7 @@ int cadastrarFuncionario(){
 
 void alterarFuncionario(){
     int opcao;
-    int repitir = 0;
+    int repetir = 0;
 
     do{
         system("cls");
@@ -310,10 +309,11 @@ void alterarFuncionario(){
                 return;
                 break;
             case 1: //Buscar usuario por id
-                repitir = alterarFuncionarioPorID();
+                repetir = alterarFuncionarioPorID();
                 break;
             case 2:
                 //buscar por cpf
+                repetir = alterarFuncionarioPorCPF();
                 break;
             case 3:
                 //buscar por login
@@ -324,5 +324,5 @@ void alterarFuncionario(){
             default:
                 printf("OpÁ„o inv·lida\n");
         }
-    }while(opcao != 0 || repitir == 1);
+    }while(opcao != 0 && repetir == 1);
 }

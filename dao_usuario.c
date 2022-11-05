@@ -8,7 +8,7 @@ USERLOGIN usuarioLogado;
 
 int gravarUsuario(USER usuario){
 	char linha[2000];
-	char id[100];
+	char id[4];
 
 	sprintf(id, "%d", usuario.id);
 
@@ -219,4 +219,82 @@ USERLOGIN realizarLogout(){
 
 USERLOGIN retornaUsuarioLogado(){
     return usuarioLogado;
+}
+
+void alterarFuncionarioDAO(USER usuario){
+    char linha[10000];
+    char linhaBKP[2000];
+    char linhaTeste[2000];
+	char** tokens;
+	char convert[100];
+
+	sprintf(convert, "%d", usuario.id);
+
+	strcpy(linhaBKP, "");
+
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        strcpy(linhaTeste, linha);
+        tokens = strSplit(linha, '|');
+        if (tokens){
+            int i;
+            if(strcmp(*(tokens), convert) != 0){
+                strcat(linhaBKP, linhaTeste);
+            }
+            free(tokens);
+        }
+	}
+	//limpando a memoria
+	fclose(file);
+	fflush(file);
+
+    //criando linha para inserir o usuario alterado
+	strcpy(linha, IntToString(usuario.id));
+  	strcat(linha, "|");
+	strcat(linha, usuario.nome);
+	strcat(linha, "|");
+	strcat(linha, usuario.sobrenome);
+	strcat(linha, "|");
+	strcat(linha, usuario.CPF);
+	strcat(linha, "|");
+	strcat(linha, usuario.login);
+	strcat(linha, "|");
+	strcat(linha, usuario.senha);
+	strcat(linha, "|");
+	strcat(linha, DateToString(usuario.dt_nascimento));
+	strcat(linha, "|");
+	strcat(linha, DateToString(usuario.dt_cadastro));
+	strcat(linha, "|");
+	strcat(linha, floatToString(usuario.salario));
+	strcat(linha, "|");
+	strcat(linha, usuario.cargo);
+	strcat(linha, "|");
+	strcat(linha, usuario.endereco);
+	strcat(linha, "|");
+	strcat(linha, IntToString(usuario.numeroDaCasa));
+	strcat(linha, "|");
+	strcat(linha, usuario.bairro);
+	strcat(linha, "|");
+	strcat(linha, usuario.cidade);
+	strcat(linha, "|");
+	strcat(linha, usuario.estado);
+
+	printf("\n\nteste: %s\n\n", linha);
+
+	strcat(linha, linhaBKP);
+
+	printf("\n\n%s\n\n", linha);
+    system("PAUSE");
+
+	//gravando usuarios com os dados alterados
+    file = fopen("arquivos\\usuario.txt", "w");
+	fprintf(file, linha);
+	fclose(file);
 }

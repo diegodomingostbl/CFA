@@ -11,5 +11,6 @@ int retornaUltimoIdUsuario();
 USERLOGIN realizarLogin(USERLOGIN login, char* error);
 USERLOGIN realizarLogout();
 USERLOGIN retornaUsuarioLogado();
+void alterarFuncionarioDAO(USER usuario);
 
 #endif // ARCHIVE_H_INCLUDED

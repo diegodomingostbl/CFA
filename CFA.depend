@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1666836859 source:c:\repositorio\cfa\funcoes.c
+1667622302 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,13 +27,13 @@
 	"struct.h"
 	"funcoes.h"
 
-1666837407 source:c:\repositorio\cfa\main.c
+1667625994 source:c:\repositorio\cfa\main.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
 	<string.h>
 	<stdbool.h>
-	"archive.h"
+	<windows.h>
 
 1666828475 c:\repositorio\cfa\archive.c
 	<stdio.h>
@@ -41,17 +41,22 @@
 	"struct.h"
 	"archive.h"
 
-1666835971 source:c:\repositorio\cfa\telamenu.c
+1667634494 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
+	<ctype.h>
+	"telaMenu.h"
 	"funcoes.h"
+	"dao_usuario.h"
+	"view_usuario.h"
 
-1666835035 c:\repositorio\cfa\struct.h
+1667622302 c:\repositorio\cfa\struct.h
+	<stdbool.h>
 
 1666836036 c:\repositorio\cfa\archive.h
 	"struct.h"
 
-1666837339 c:\repositorio\cfa\funcoes.h
+1667622302 c:\repositorio\cfa\funcoes.h
 	"struct.h"
 
 1667339502 source:c:\diego\fca\archive.c
@@ -152,6 +157,42 @@
 	"telaMenu.h"
 
 1667601716 source:c:\diego\fca\view_usuario.c
+	<stdio.h>
+	<ctype.h>
+	"view_usuario.h"
+	"dao_usuario.h"
+	"funcoes.h"
+
+1667635794 source:c:\repositorio\cfa\dao_usuario.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_usuario.h"
+	"funcoes.h"
+
+1667633065 c:\repositorio\cfa\dao_usuario.h
+	"struct.h"
+
+1667622302 source:c:\repositorio\cfa\login.c
+	<stdio.h>
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	<stdbool.h>
+	<windows.h>
+	"login.h"
+	"dao_usuario.h"
+	"funcoes.h"
+	"telaMenu.h"
+
+1667622302 c:\repositorio\cfa\login.h
+	"struct.h"
+
+1667622302 c:\repositorio\cfa\telamenu.h
+
+1667634916 c:\repositorio\cfa\view_usuario.h
+	"struct.h"
+
+1667635890 source:c:\repositorio\cfa\view_usuario.c
 	<stdio.h>
 	<ctype.h>
 	"view_usuario.h"
