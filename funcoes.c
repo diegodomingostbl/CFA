@@ -119,3 +119,13 @@ DATEC retornaDataAtual(){
 
   	return data;
 }
+
+char* toLowerString(char* s) {
+  for(char *p=s; *p; p++) *p=tolower(*p);
+  return s;
+}
+
+char* toUpperString(char* s) {
+  for(char *p=s; *p; p++) *p=toupper(*p);
+  return s;
+}

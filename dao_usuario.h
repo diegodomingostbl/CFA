@@ -12,5 +12,7 @@ USERLOGIN realizarLogin(USERLOGIN login, char* error);
 USERLOGIN realizarLogout();
 USERLOGIN retornaUsuarioLogado();
 void alterarFuncionarioDAO(USER usuario);
+USER* procurarUsuarioCPF(char* CPF, int* qtd);
+USER* procurarUsuarioNome(char* nome, int* qtd);
 
 #endif // ARCHIVE_H_INCLUDED

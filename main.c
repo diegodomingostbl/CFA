@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <windows.h>
 
+#include "dao_usuario.h"
+#include "struct.h"
 
 void main(){
     loginMain();

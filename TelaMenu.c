@@ -308,18 +308,17 @@ void alterarFuncionario(){
             case 0:
                 return;
                 break;
-            case 1: //Buscar usuario por id
+            case 1:
                 repetir = alterarFuncionarioPorID();
                 break;
             case 2:
-                //buscar por cpf
                 repetir = alterarFuncionarioPorCPF();
                 break;
             case 3:
-                //buscar por login
+                repetir = alterarFuncionarioPorLogin();
                 break;
             case 4:
-                //buscar por nome
+                repetir = alterarFuncionarioPorNome();
                 break;
             default:
                 printf("Opção inválida\n");

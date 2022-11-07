@@ -106,7 +106,7 @@ USER procurarUsuarioLogin(char* cLogin){
         tokens = strSplit(linha, '|');
         if (tokens){
             int i;
-            if(strcmp(*(tokens + 4), cLogin) == 0){
+            if(strcmp(toLowerString(*(tokens + 4)), cLogin) == 0){
                 usuario = tokenToUser(tokens);
             }
             free(tokens);
@@ -286,15 +286,91 @@ void alterarFuncionarioDAO(USER usuario){
 	strcat(linha, "|");
 	strcat(linha, usuario.estado);
 
-	printf("\n\nteste: %s\n\n", linha);
-
 	strcat(linha, linhaBKP);
-
-	printf("\n\n%s\n\n", linha);
-    system("PAUSE");
 
 	//gravando usuarios com os dados alterados
     file = fopen("arquivos\\usuario.txt", "w");
 	fprintf(file, linha);
 	fclose(file);
+
+	system("cls");
+	printf("Funcionário %d alterado com sucesso.\n", usuario.id);
+	system("PAUSE");
+	system("cls");
+}
+
+USER* procurarUsuarioCPF(char* CPF, int* qtd){
+    char linha[2000];
+	char** tokens;
+	USER* usuario;
+	int qtdUsuario = 0;
+
+	usuario = malloc(sizeof(USER));
+
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return usuario;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        tokens = strSplit(linha, '|');
+        if (tokens){
+            if(strstr(*(tokens + 3), CPF) != NULL){
+                if(qtdUsuario > 0){
+                    usuario = realloc(usuario, (qtdUsuario + 1) * sizeof(USER));
+                }
+                *(usuario + qtdUsuario) = tokenToUser(tokens);
+                qtdUsuario++;
+            }
+            free(tokens);
+        }
+	}
+	fclose(file);
+
+	*qtd = qtdUsuario;
+
+    return usuario;
+}
+
+USER* procurarUsuarioNome(char* nome, int* qtd){
+    char linha[2000];
+	char** tokens;
+	USER* usuario;
+	int qtdUsuario = 0;
+	char nomeSobrenome[300];
+
+	usuario = malloc(sizeof(USER));
+
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return usuario;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        tokens = strSplit(linha, '|');
+        if (tokens){
+            strcpy(nomeSobrenome, *(tokens + 1));
+            strcat(nomeSobrenome, " ");
+            strcat(nomeSobrenome, *(tokens + 2));
+            if(strstr(toLowerString(nomeSobrenome), toLowerString(nome)) != NULL){
+                if(qtdUsuario > 0){
+                    usuario = realloc(usuario, (qtdUsuario + 1) * sizeof(USER));
+                }
+                *(usuario + qtdUsuario) = tokenToUser(tokens);
+                qtdUsuario++;
+            }
+            free(tokens);
+        }
+	}
+	fclose(file);
+
+	*qtd = qtdUsuario;
+
+    return usuario;
 }
