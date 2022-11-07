@@ -39,6 +39,15 @@ struct userLogado{
 };
 typedef struct userLogado USERLOGIN;
 
+struct veiculo {
+    char placa[7];
+    char modelo[30];
+    char cor[15];
+    int idcasa;
+
+};
+typedef struct veiculo VEICULO;
+
 
 #endif // STRUCT_H_INCLUDED
 

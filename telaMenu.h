@@ -3,6 +3,10 @@
 
 void menu();
 int cadastrarFuncionario();
+<<<<<<< Updated upstream
 void alterarFuncionario();
+=======
+int cadastrarVeiculo();
+>>>>>>> Stashed changes
 
 #endif // TELAMENU_H_INCLUDED

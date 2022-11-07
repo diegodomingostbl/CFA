@@ -287,6 +287,7 @@ int cadastrarFuncionario(){
     gravarUsuario(usuario);
 }
 
+<<<<<<< Updated upstream
 void alterarFuncionario(){
     int opcao;
     int repetir = 0;
@@ -324,4 +325,17 @@ void alterarFuncionario(){
                 printf("Opção inválida\n");
         }
     }while(opcao != 0 && repetir == 1);
+=======
+int cadastrarVeiculo(){
+    VEICULO veiculo;
+        printf(" PLACA: ");
+        gets(veiculo.placa);
+        printf(" MODELO:");
+        gets(veiculo.modelo);
+        printf(" COR:");
+        gets(veiculo.cor);
+        printf("Código da casa: ");
+        scanf("%d", &veiculo.idcasa);
+
+>>>>>>> Stashed changes
 }

@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< Updated upstream
 1667622302 source:c:\repositorio\cfa\funcoes.c
+=======
+1667338914 source:c:\repositorio\cfa\funcoes.c
+>>>>>>> Stashed changes
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,7 +14,7 @@
 
 1666824408 source:c:\repositorio\cfa\struct.c
 
-1666836027 source:c:\repositorio\cfa\archive.c
+1667338914 source:c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
 	"archive.h"
@@ -27,13 +31,22 @@
 	"struct.h"
 	"funcoes.h"
 
+<<<<<<< Updated upstream
 1667625994 source:c:\repositorio\cfa\main.c
+=======
+1667338914 source:c:\repositorio\cfa\main.c
+>>>>>>> Stashed changes
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
 	<string.h>
 	<stdbool.h>
+<<<<<<< Updated upstream
 	<windows.h>
+=======
+	"archive.h"
+	"funcoes.h"
+>>>>>>> Stashed changes
 
 1666828475 c:\repositorio\cfa\archive.c
 	<stdio.h>
@@ -41,22 +54,36 @@
 	"struct.h"
 	"archive.h"
 
+<<<<<<< Updated upstream
 1667634494 source:c:\repositorio\cfa\telamenu.c
+=======
+1667339753 source:c:\repositorio\cfa\telamenu.c
+>>>>>>> Stashed changes
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
 	"telaMenu.h"
 	"funcoes.h"
+<<<<<<< Updated upstream
 	"dao_usuario.h"
 	"view_usuario.h"
 
 1667622302 c:\repositorio\cfa\struct.h
+=======
+	"archive.h"
+
+1667339753 c:\repositorio\cfa\struct.h
+>>>>>>> Stashed changes
 	<stdbool.h>
 
-1666836036 c:\repositorio\cfa\archive.h
+1667338914 c:\repositorio\cfa\archive.h
 	"struct.h"
 
+<<<<<<< Updated upstream
 1667622302 c:\repositorio\cfa\funcoes.h
+=======
+1667338914 c:\repositorio\cfa\funcoes.h
+>>>>>>> Stashed changes
 	"struct.h"
 
 1667339502 source:c:\diego\fca\archive.c
