@@ -1,5 +1,13 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1667815654 source:c:\repositorio\cfa\funcoes.c
+=======
+<<<<<<< Updated upstream
+1667622302 source:c:\repositorio\cfa\funcoes.c
+=======
+1667338914 source:c:\repositorio\cfa\funcoes.c
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,7 +18,7 @@
 
 1666824408 source:c:\repositorio\cfa\struct.c
 
-1666836027 source:c:\repositorio\cfa\archive.c
+1667338914 source:c:\repositorio\cfa\archive.c
 	<stdio.h>
 	<stdlib.h>
 	"archive.h"
@@ -27,16 +35,32 @@
 	"struct.h"
 	"funcoes.h"
 
+<<<<<<< HEAD
 1667828175 source:c:\repositorio\cfa\main.c
+=======
+<<<<<<< Updated upstream
+1667625994 source:c:\repositorio\cfa\main.c
+=======
+1667338914 source:c:\repositorio\cfa\main.c
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
 	<string.h>
 	<stdbool.h>
+<<<<<<< Updated upstream
 	<windows.h>
+<<<<<<< HEAD
 	"login.h"
 	"dao_usuario.h"
 	"struct.h"
+=======
+=======
+	"archive.h"
+	"funcoes.h"
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 
 1666828475 c:\repositorio\cfa\archive.c
 	<stdio.h>
@@ -44,22 +68,48 @@
 	"struct.h"
 	"archive.h"
 
+<<<<<<< HEAD
 1667829009 source:c:\repositorio\cfa\telamenu.c
+=======
+<<<<<<< Updated upstream
+1667634494 source:c:\repositorio\cfa\telamenu.c
+=======
+1667339753 source:c:\repositorio\cfa\telamenu.c
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
 	"telaMenu.h"
 	"funcoes.h"
+<<<<<<< Updated upstream
 	"dao_usuario.h"
 	"view_usuario.h"
 
+<<<<<<< HEAD
 1667815979 c:\repositorio\cfa\struct.h
+=======
+1667622302 c:\repositorio\cfa\struct.h
+=======
+	"archive.h"
+
+1667339753 c:\repositorio\cfa\struct.h
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 	<stdbool.h>
 
-1666836036 c:\repositorio\cfa\archive.h
+1667338914 c:\repositorio\cfa\archive.h
 	"struct.h"
 
+<<<<<<< HEAD
 1667815654 c:\repositorio\cfa\funcoes.h
+=======
+<<<<<<< Updated upstream
+1667622302 c:\repositorio\cfa\funcoes.h
+=======
+1667338914 c:\repositorio\cfa\funcoes.h
+>>>>>>> Stashed changes
+>>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 	"struct.h"
 
 1667339502 source:c:\diego\fca\archive.c
