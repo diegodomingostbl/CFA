@@ -52,6 +52,7 @@ int gravarUsuario(USER usuario){
 	strcat(linha, "\n");
 
 	fprintf(file, linha);
+    fclose(file);
 
 	return 1;
 }
@@ -373,4 +374,37 @@ USER* procurarUsuarioNome(char* nome, int* qtd){
 	*qtd = qtdUsuario;
 
     return usuario;
+}
+
+int dao_gravarRelatorioFuncionario(USER* usuario, int qtdUsuario, char* nome_arquivo){
+	char caminho[200];
+	char nomeSobrenome[300];
+
+	strcpy(caminho, "relatorios\\");
+	strcat(caminho, nome_arquivo);
+	strcat(caminho, ".txt");
+
+    printf("%s", caminho);
+	FILE *file;
+  	file = fopen(caminho, "w");
+
+
+  	if(file == NULL){
+  		printf("Não foi possivel gravar o arquivo.\n");
+  		system("PAUSE");
+  		return 0;
+	}
+
+	fprintf(file, "Foram encontrados %d funcionários\n", qtdUsuario);
+    fprintf(file, "%-5s | %-20s | %-13s | %-10s\n", "ID", "NOME", "CPF", "LOGIN");
+    for(int i = 0; i < qtdUsuario; i++){
+        strcpy(nomeSobrenome, (usuario + i)->nome);
+        strcat(nomeSobrenome, " ");
+        strcat(nomeSobrenome, (usuario + i)->sobrenome);
+        fprintf(file, "%-5d | %-20s | %-13s | %-10s\n", (usuario + i)->id, nomeSobrenome, (usuario + i)->CPF, (usuario + i)->login);
+    }
+
+    fclose(file);
+
+	return 1;
 }

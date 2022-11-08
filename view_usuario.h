@@ -8,5 +8,6 @@ int alterarFuncionarioPorCPF();
 int alterarFuncionarioPorLogin();
 int alterarFuncionarioPorNome();
 void view_AlterarUsuarioPorUSER(USER usuario);
+int view_relatorioFuncionarioPorNome();
 
 #endif // VIEW_USUARIO_H_INCLUDED

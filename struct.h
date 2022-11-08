@@ -39,6 +39,19 @@ struct userLogado{
 };
 typedef struct userLogado USERLOGIN;
 
+typedef struct{
+    int id;
+    char nome[50], dia[3], mes[3], ano[5];
+    float valor;
+    bool contaValida;
+}c_pagar;
+
+typedef struct{
+    int id;
+    char nome[50], dia[3], mes[3], ano[5];
+    float valor;
+    bool contaValida;
+}c_receber;
 
 #endif // STRUCT_H_INCLUDED
 

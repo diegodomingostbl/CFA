@@ -14,5 +14,6 @@ USERLOGIN retornaUsuarioLogado();
 void alterarFuncionarioDAO(USER usuario);
 USER* procurarUsuarioCPF(char* CPF, int* qtd);
 USER* procurarUsuarioNome(char* nome, int* qtd);
+int dao_gravarRelatorioFuncionario(USER* usuario, int qtdUsuario, char* nome_arquivo);
 
 #endif // ARCHIVE_H_INCLUDED

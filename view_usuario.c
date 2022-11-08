@@ -299,3 +299,68 @@ void view_AlterarUsuarioPorUSER(USER usuario){
         alterarFuncionarioDAO(usuarioAlterado);
     }
 }
+
+int view_relatorioFuncionarioPorNome(){
+    char nome[300];
+    USER* usuario;
+    int qtdUsuario = 0;
+    char buscar_novamente = 'N';
+    char gravar = 'N';
+    char nomeSobrenome[300];
+    int idUsuario = 0;
+    bool achou_usuario = false;
+    char texto_relatorio[5000];
+    char nome_arquivo[100];
+    DATEC data;
+
+    do{
+        system("cls");
+        fflush(stdin);
+        printf("Relatório de funcionário\n");
+        printf("Digite 0 (zero) para voltar\n");
+        printf("Digite o nome para filtrar: ");
+        gets(nome);
+
+        if(nome != '0'){
+            usuario = procurarUsuarioNome(nome, &qtdUsuario);
+
+            if(qtdUsuario > 0){
+                do{
+                    printf("Foram encontrados %d funcionários\n", qtdUsuario);
+                    printf("%-5s | %-20s | %-13s | %-10s\n", "ID", "NOME", "CPF", "LOGIN");
+
+                    for(int i = 0; i < qtdUsuario; i++){
+                        strcpy(nomeSobrenome, (usuario + i)->nome);
+                        strcat(nomeSobrenome, " ");
+                        strcat(nomeSobrenome, (usuario + i)->sobrenome);
+                        printf("%-5d | %-20s | %-13s | %-10s\n", (usuario + i)->id, nomeSobrenome, (usuario + i)->CPF, (usuario + i)->login);
+                    }
+                    printf("Deseja salvar o relatório ? (S para SIM / N para NÃO): ");
+                    gravar = getche();
+                    printf("\n");
+                    if(toupper(gravar) == 'S'){
+                        printf("calcula data");
+                        data = retornaDataAtual();
+                        strcpy(nome_arquivo, nome);
+                        strcat(nome_arquivo, " - ");
+                        strcat(nome_arquivo, IntToString(data.dia));
+                        strcat(nome_arquivo, "-");
+                        strcat(nome_arquivo, IntToString(data.mes));
+                        strcat(nome_arquivo, "-");
+                        strcat(nome_arquivo, IntToString(data.ano));
+                        printf("termina data");
+                        dao_gravarRelatorioFuncionario(usuario, qtdUsuario, nome_arquivo);
+                    }
+                }while(achou_usuario != true && idUsuario != 0);
+            }else{
+                printf("Nome não encontrado!\n");
+                printf("Deseja buscá-lo novamente ? (S para SIM / N para NÃO): ");
+                buscar_novamente = getche();
+            }
+        }else{
+            return 1;
+        }
+    }while(toupper(buscar_novamente) == 'S');
+
+    return 0;
+}

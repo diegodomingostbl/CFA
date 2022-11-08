@@ -2,7 +2,12 @@
 #define TELAMENU_H_INCLUDED
 
 void menu();
-int cadastrarFuncionario();
+void menuCadastro();
+void menuAlterar();
+void menuRelatorio();
+void cadastrarFuncionario();
 void alterarFuncionario();
+void relatorioFuncionario();
+void entradaVisitante();
 
 #endif // TELAMENU_H_INCLUDED
