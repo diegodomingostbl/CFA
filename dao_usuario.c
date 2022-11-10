@@ -376,6 +376,78 @@ USER* procurarUsuarioNome(char* nome, int* qtd){
     return usuario;
 }
 
+USER* procurarUsuarioDataCadastro(DATEC dt_inicial, DATEC dt_final, int* qtd){
+    char linha[2000];
+	char** tokens;
+	USER* usuario;
+	int qtdUsuario = 0;
+
+	usuario = malloc(sizeof(USER));
+
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return usuario;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        tokens = strSplit(linha, '|');
+        if (tokens){
+            if(validarDataEntrePeriodos(dt_inicial, dt_final, stringToDate(*(tokens + 7))) == true){
+                if(qtdUsuario > 0){
+                    usuario = realloc(usuario, (qtdUsuario + 1) * sizeof(USER));
+                }
+                *(usuario + qtdUsuario) = tokenToUser(tokens);
+                qtdUsuario++;
+            }
+            free(tokens);
+        }
+	}
+	fclose(file);
+
+	*qtd = qtdUsuario;
+
+    return usuario;
+}
+
+USER* procurarUsuarioDataNascimento(DATEC dt_inicial, DATEC dt_final, int* qtd){
+    char linha[2000];
+	char** tokens;
+	USER* usuario;
+	int qtdUsuario = 0;
+
+	usuario = malloc(sizeof(USER));
+
+	FILE *file;
+  	file = fopen("arquivos\\usuario.txt", "a+");
+
+  	if(file == NULL){
+  		printf("Não foi possivel abrir o arquivo.");
+  		return usuario;
+	}
+
+	while(fgets(linha, 2000, file) != NULL){
+        tokens = strSplit(linha, '|');
+        if (tokens){
+            if(validarDataEntrePeriodos(dt_inicial, dt_final, stringToDate(*(tokens + 6))) == true){
+                if(qtdUsuario > 0){
+                    usuario = realloc(usuario, (qtdUsuario + 1) * sizeof(USER));
+                }
+                *(usuario + qtdUsuario) = tokenToUser(tokens);
+                qtdUsuario++;
+            }
+            free(tokens);
+        }
+	}
+	fclose(file);
+
+	*qtd = qtdUsuario;
+
+    return usuario;
+}
+
 int dao_gravarRelatorioFuncionario(USER* usuario, int qtdUsuario, char* nome_arquivo){
 	char caminho[200];
 	char nomeSobrenome[300];

@@ -1,0 +1,6 @@
+Foram encontrados 4 funcionários
+ID    | NOME                 | CPF           | LOGIN     
+3     | Ana Domingos         | 86895544089   | ana       
+1     | diego Grossi         | 73225909025   | ana       
+2     | Ana Grossi           | 49016333843   | 123456    
+4     | diego Domingos       | 49016333843   | 123456    

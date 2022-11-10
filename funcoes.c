@@ -129,3 +129,30 @@ char* toUpperString(char* s) {
   for(char *p=s; *p; p++) *p=toupper(*p);
   return s;
 }
+
+bool validarPeriodoInicialFinal(DATEC dt_inicial, DATEC dt_final){
+    if((dt_inicial.dia <= 0 || dt_inicial.dia > 31) || (dt_final.dia <= 0 || dt_final.dia > 31) || (dt_inicial.mes < 1 || dt_inicial.mes > 12) || (dt_final.mes < 1 || dt_final.mes > 12)){
+       return false;
+    }
+
+
+    if(dt_final.ano < dt_inicial.ano){
+        return false;
+    }else if(dt_final.mes < dt_inicial.mes){
+        return false;
+    }else if(dt_final.dia < dt_inicial.dia){
+        return false;
+    }
+}
+
+bool validarDataEntrePeriodos(DATEC dt_inicial, DATEC dt_final, DATEC data){
+    if((data.dia >= dt_inicial.dia) && (data.dia <= dt_final.dia)){
+        if((data.mes >= dt_inicial.mes) && (data.mes <= dt_final.mes)){
+            if((data.ano >= dt_inicial.ano) && (data.ano <= dt_final.ano)){
+                return true;
+            }
+        }
+    }
+
+    return false;
+}

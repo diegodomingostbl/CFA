@@ -21,4 +21,7 @@ DATEC retornaDataAtual();
 char* toLowerString(char* s);
 char* toUpperString(char* s);
 
+bool validarPeriodoInicialFinal(DATEC dt_inicial, DATEC dt_final);
+bool validarDataEntrePeriodos(DATEC dt_inicial, DATEC dt_final, DATEC data);
+
 #endif // FUNCOES_H_INCLUDED

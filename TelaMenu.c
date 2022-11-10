@@ -6,6 +6,7 @@
 #include "funcoes.h";
 #include "dao_usuario.h";
 #include "view_usuario.h";
+#include "struct.h"
 
 void menu(){
     setlocale(LC_ALL, "Portuguese");
@@ -262,7 +263,6 @@ void cadastrarFuncionario(){
     gravarUsuario(usuario);
 }
 
-<<<<<<< Updated upstream
 void alterarFuncionario(){
     int opcao;
     int repetir = 0;
@@ -300,19 +300,7 @@ void alterarFuncionario(){
                 printf("Opção inválida\n");
         }
     }while(opcao != 0 && repetir == 1);
-=======
-int cadastrarVeiculo(){
-    VEICULO veiculo;
-        printf(" PLACA: ");
-        gets(veiculo.placa);
-        printf(" MODELO:");
-        gets(veiculo.modelo);
-        printf(" COR:");
-        gets(veiculo.cor);
-        printf("Código da casa: ");
-        scanf("%d", &veiculo.idcasa);
 
->>>>>>> Stashed changes
 }
 
 void relatorioFuncionario(){
@@ -323,11 +311,9 @@ void relatorioFuncionario(){
         system("cls");
         printf("Relatório de funcionário\n");
         printf("Deseja buscar por: \n");
-        printf(" 1 - Código interno\n");
-        printf(" 2 - CPF\n");
-        printf(" 3 - Login\n");
-        printf(" 4 - Nome\n");
-        printf(" 5 - Data de cadastro\n");
+        printf(" 1 - Nome\n");
+        printf(" 2 - Data de cadastro\n");
+        printf(" 3 - Data de nascimento\n");
         printf(" 0 - Voltar\n");
         printf("Digite uma das opções acima: ");
         fflush(stdin);
@@ -338,21 +324,29 @@ void relatorioFuncionario(){
                 return;
                 break;
             case 1:
-                repetir = alterarFuncionarioPorID();
+                repetir = view_relatorioFuncionarioPorNome();
                 break;
             case 2:
-                repetir = alterarFuncionarioPorCPF();
+                repetir = view_relatorioFuncionarioPorDataCadastro();
                 break;
             case 3:
-                repetir = alterarFuncionarioPorLogin();
-                break;
-            case 4:
-                repetir = view_relatorioFuncionarioPorNome();
+                repetir = view_relatorioFuncionarioPorDataNascimento();
                 break;
         }
     }while(opcao != 0 && repetir == 1);
 }
 
 void entradaVisitante(){
+}
 
+int cadastrarVeiculo(){
+    VEICULO veiculo;
+    printf(" PLACA: ");
+    gets(veiculo.placa);
+    printf(" MODELO:");
+    gets(veiculo.modelo);
+    printf(" COR:");
+    gets(veiculo.cor);
+    printf("Código da casa: ");
+    scanf("%d", &veiculo.idcasa);
 }

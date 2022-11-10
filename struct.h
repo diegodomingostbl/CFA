@@ -39,7 +39,6 @@ struct userLogado{
 };
 typedef struct userLogado USERLOGIN;
 
-<<<<<<< HEAD
 typedef struct{
     int id;
     char nome[50], dia[3], mes[3], ano[5];
@@ -53,7 +52,7 @@ typedef struct{
     float valor;
     bool contaValida;
 }c_receber;
-=======
+
 struct veiculo {
     char placa[7];
     char modelo[30];
@@ -62,8 +61,6 @@ struct veiculo {
 
 };
 typedef struct veiculo VEICULO;
-
->>>>>>> 50505e5b5c53b2079aee884b530d29ebc7256f3d
 
 #endif // STRUCT_H_INCLUDED
 

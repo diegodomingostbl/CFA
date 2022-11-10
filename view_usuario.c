@@ -339,7 +339,6 @@ int view_relatorioFuncionarioPorNome(){
                     gravar = getche();
                     printf("\n");
                     if(toupper(gravar) == 'S'){
-                        printf("calcula data");
                         data = retornaDataAtual();
                         strcpy(nome_arquivo, nome);
                         strcat(nome_arquivo, " - ");
@@ -348,7 +347,6 @@ int view_relatorioFuncionarioPorNome(){
                         strcat(nome_arquivo, IntToString(data.mes));
                         strcat(nome_arquivo, "-");
                         strcat(nome_arquivo, IntToString(data.ano));
-                        printf("termina data");
                         dao_gravarRelatorioFuncionario(usuario, qtdUsuario, nome_arquivo);
                     }
                 }while(achou_usuario != true && idUsuario != 0);
@@ -358,6 +356,170 @@ int view_relatorioFuncionarioPorNome(){
                 buscar_novamente = getche();
             }
         }else{
+            return 1;
+        }
+    }while(toupper(buscar_novamente) == 'S');
+
+    return 0;
+}
+
+int view_relatorioFuncionarioPorDataCadastro(){
+    USER* usuario;
+    int qtdUsuario = 0;
+    char buscar_novamente = 'N';
+    char gravar = 'N';
+    char nomeSobrenome[300];
+    char nome_arquivo[100];
+    DATEC data;
+    DATEC data_inicial;
+    DATEC data_final;
+
+
+    do{
+        buscar_novamente = 'N';
+        system("cls");
+        fflush(stdin);
+        printf("Relatório de funcionário por data de cadastro\n");
+        printf("Digite 0 (zero) para voltar\n");
+        printf("Digite o período inicial: \n");
+        printf("	Dia: ");
+        scanf("%d", &data_inicial.dia);
+        if(data_inicial.dia == 0) return 1;
+        printf("	Mês: ");
+        scanf("%d", &data_inicial.mes);
+        if(data_inicial.mes == 0) return 1;
+        printf("	Ano: ");
+        scanf("%d", &data_inicial.ano);
+        if(data_inicial.ano == 0) return 1;
+        printf("Digite o período final: \n");
+        printf("	Dia: ");
+        scanf("%d", &data_final.dia);
+        if(data_final.dia == 0) return 1;
+        printf("	Mês: ");
+        scanf("%d", &data_final.mes);
+        if(data_final.mes == 0) return 1;
+        printf("	Ano: ");
+        scanf("%d", &data_final.ano);
+        if(data_final.ano == 0) return 1;
+
+        if(validarPeriodoInicialFinal(data_inicial, data_final) == true){
+            usuario = procurarUsuarioDataCadastro(data_inicial, data_final, &qtdUsuario);
+
+            if(qtdUsuario > 0){
+                printf("Foram encontrados %d funcionários\n", qtdUsuario);
+                printf("%-5s | %-20s | %-13s | %-10s\n", "ID", "NOME", "CPF", "LOGIN");
+
+                for(int i = 0; i < qtdUsuario; i++){
+                    strcpy(nomeSobrenome, (usuario + i)->nome);
+                    strcat(nomeSobrenome, " ");
+                    strcat(nomeSobrenome, (usuario + i)->sobrenome);
+                    printf("%-5d | %-20s | %-13s | %-10s\n", (usuario + i)->id, nomeSobrenome, (usuario + i)->CPF, (usuario + i)->login);
+                }
+                printf("Deseja salvar o relatório ? (S para SIM / N para NÃO): ");
+                gravar = getche();
+                printf("\n");
+                if(toupper(gravar) == 'S'){
+                    data = retornaDataAtual();
+                    strcpy(nome_arquivo, "Funcionários cadastrados no período");
+                    strcat(nome_arquivo, " - ");
+                    strcat(nome_arquivo, IntToString(data.dia));
+                    strcat(nome_arquivo, "-");
+                    strcat(nome_arquivo, IntToString(data.mes));
+                    strcat(nome_arquivo, "-");
+                    strcat(nome_arquivo, IntToString(data.ano));
+                    dao_gravarRelatorioFuncionario(usuario, qtdUsuario, nome_arquivo);
+                }
+            }else{
+                printf("Não foram encontrados funcionários neste período!\n");
+                printf("Deseja buscá-lo novamente ? (S para SIM / N para NÃO): ");
+                buscar_novamente = getche();
+            }
+        }else{
+            buscar_novamente = 'S';
+            printf("Período de datas inválido!\n");
+            system("PAUSE");
+            return 1;
+        }
+    }while(toupper(buscar_novamente) == 'S');
+
+    return 0;
+}
+
+int view_relatorioFuncionarioPorDataNascimento(){
+    USER* usuario;
+    int qtdUsuario = 0;
+    char buscar_novamente = 'N';
+    char gravar = 'N';
+    char nomeSobrenome[300];
+    char nome_arquivo[100];
+    DATEC data;
+    DATEC data_inicial;
+    DATEC data_final;
+
+
+    do{
+        buscar_novamente = 'N';
+        system("cls");
+        fflush(stdin);
+        printf("Relatório de funcionário por data de nascimento\n");
+        printf("Digite 0 (zero) para voltar\n");
+        printf("Digite o período inicial: \n");
+        printf("	Dia: ");
+        scanf("%d", &data_inicial.dia);
+        if(data_inicial.dia == 0) return 1;
+        printf("	Mês: ");
+        scanf("%d", &data_inicial.mes);
+        if(data_inicial.mes == 0) return 1;
+        printf("	Ano: ");
+        scanf("%d", &data_inicial.ano);
+        if(data_inicial.ano == 0) return 1;
+        printf("Digite o período final: \n");
+        printf("	Dia: ");
+        scanf("%d", &data_final.dia);
+        if(data_final.dia == 0) return 1;
+        printf("	Mês: ");
+        scanf("%d", &data_final.mes);
+        if(data_final.mes == 0) return 1;
+        printf("	Ano: ");
+        scanf("%d", &data_final.ano);
+        if(data_final.ano == 0) return 1;
+
+        if(validarPeriodoInicialFinal(data_inicial, data_final) == true){
+            usuario = procurarUsuarioDataNascimento(data_inicial, data_final, &qtdUsuario);
+
+            if(qtdUsuario > 0){
+                printf("Foram encontrados %d funcionários\n", qtdUsuario);
+                printf("%-5s | %-20s | %-13s | %-10s\n", "ID", "NOME", "CPF", "LOGIN");
+
+                for(int i = 0; i < qtdUsuario; i++){
+                    strcpy(nomeSobrenome, (usuario + i)->nome);
+                    strcat(nomeSobrenome, " ");
+                    strcat(nomeSobrenome, (usuario + i)->sobrenome);
+                    printf("%-5d | %-20s | %-13s | %-10s\n", (usuario + i)->id, nomeSobrenome, (usuario + i)->CPF, (usuario + i)->login);
+                }
+                printf("Deseja salvar o relatório ? (S para SIM / N para NÃO): ");
+                gravar = getche();
+                printf("\n");
+                if(toupper(gravar) == 'S'){
+                    data = retornaDataAtual();
+                    strcpy(nome_arquivo, "Funcionários cadastrados no período");
+                    strcat(nome_arquivo, " - ");
+                    strcat(nome_arquivo, IntToString(data.dia));
+                    strcat(nome_arquivo, "-");
+                    strcat(nome_arquivo, IntToString(data.mes));
+                    strcat(nome_arquivo, "-");
+                    strcat(nome_arquivo, IntToString(data.ano));
+                    dao_gravarRelatorioFuncionario(usuario, qtdUsuario, nome_arquivo);
+                }
+            }else{
+                printf("Não foram encontrados funcionários neste período!\n");
+                printf("Deseja buscá-lo novamente ? (S para SIM / N para NÃO): ");
+                buscar_novamente = getche();
+            }
+        }else{
+            buscar_novamente = 'S';
+            printf("Período de datas inválido!\n");
+            system("PAUSE");
             return 1;
         }
     }while(toupper(buscar_novamente) == 'S');
