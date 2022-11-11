@@ -24,4 +24,6 @@ char* toUpperString(char* s);
 bool validarPeriodoInicialFinal(DATEC dt_inicial, DATEC dt_final);
 bool validarDataEntrePeriodos(DATEC dt_inicial, DATEC dt_final, DATEC data);
 
+char* removerBarraN(char* str);
+
 #endif // FUNCOES_H_INCLUDED

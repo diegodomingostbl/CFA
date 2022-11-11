@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 54 <<<<<<< HEAD
 
-1668007124 source:c:\repositorio\cfa\funcoes.c
+1668107551 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1668047412 source:c:\repositorio\cfa\telamenu.c
+1668182814 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -91,15 +91,19 @@
 	"funcoes.h"
 	"dao_usuario.h"
 	"view_usuario.h"
+	"dao_veiculo.h"
+	"view_veiculo.h"
+	"dao_residencia.h"
+	"view_residencia.h"
 	"struct.h"
 
-1668005861 c:\repositorio\cfa\struct.h
+1668174860 c:\repositorio\cfa\struct.h
 	<stdbool.h>
 
 1667338914 c:\repositorio\cfa\archive.h
 	"struct.h"
 
-1668005560 c:\repositorio\cfa\funcoes.h
+1668106825 c:\repositorio\cfa\funcoes.h
 	"struct.h"
 
 1667339502 source:c:\diego\fca\archive.c
@@ -209,7 +213,7 @@
 	"dao_usuario.h"
 	"funcoes.h"
 
-1668047348 source:c:\repositorio\cfa\dao_usuario.c
+1668168996 source:c:\repositorio\cfa\dao_usuario.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_usuario.h"
@@ -233,15 +237,55 @@
 1667622302 c:\repositorio\cfa\login.h
 	"struct.h"
 
-1668006354 c:\repositorio\cfa\telamenu.h
+1668181403 c:\repositorio\cfa\telamenu.h
 
 1668047386 c:\repositorio\cfa\view_usuario.h
 	"struct.h"
 
-1668005995 source:c:\repositorio\cfa\view_usuario.c
+1668047539 source:c:\repositorio\cfa\view_usuario.c
 	<stdio.h>
 	<ctype.h>
 	"view_usuario.h"
 	"dao_usuario.h"
 	"funcoes.h"
+
+1668182785 source:c:\repositorio\cfa\view_veiculo.c
+	<stdio.h>
+	"view_veiculo.h"
+	"dao_veiculo.h"
+	"funcoes.h"
+	"struct.h"
+
+1668169780 c:\repositorio\cfa\view_veiculo.h
+	"struct.h"
+
+1668175528 source:c:\repositorio\cfa\dao_veiculo.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_veiculo.h"
+	"funcoes.h"
+	"struct.h"
+
+1668169526 c:\repositorio\cfa\dao_veiculo.h
+	"struct.h"
+
+1668182596 source:c:\repositorio\cfa\dao_residencia.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_residencia.h"
+	"funcoes.h"
+	"struct.h"
+
+1668182634 c:\repositorio\cfa\dao_residencia.h
+	"struct.h"
+
+1668181546 source:c:\repositorio\cfa\view_residencia.c
+	<stdio.h>
+	"view_residencia.h"
+	"dao_residencia.h"
+	"funcoes.h"
+	"struct.h"
+
+1668182809 c:\repositorio\cfa\view_residencia.h
+	"struct.h"
 

@@ -5,7 +5,7 @@
 		<Option title="CFA" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="ControllerUsuario/;ControllerLogin/" />
+		<Option virtualFolders="ControllerUsuario/;ControllerLogin/;ControllerVeiculo/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/CFA" prefix_auto="1" extension_auto="1" />
@@ -39,6 +39,13 @@
 		<Unit filename="dao_usuario.h">
 			<Option virtualFolder="ControllerUsuario/" />
 		</Unit>
+		<Unit filename="dao_veiculo.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerVeiculo/" />
+		</Unit>
+		<Unit filename="dao_veiculo.h">
+			<Option virtualFolder="ControllerVeiculo/" />
+		</Unit>
 		<Unit filename="funcoes.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -64,6 +71,13 @@
 		</Unit>
 		<Unit filename="view_usuario.h">
 			<Option virtualFolder="ControllerUsuario/" />
+		</Unit>
+		<Unit filename="view_veiculo.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerVeiculo/" />
+		</Unit>
+		<Unit filename="view_veiculo.h">
+			<Option virtualFolder="ControllerVeiculo/" />
 		</Unit>
 		<Extensions />
 	</Project>

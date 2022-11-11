@@ -456,7 +456,6 @@ int dao_gravarRelatorioFuncionario(USER* usuario, int qtdUsuario, char* nome_arq
 	strcat(caminho, nome_arquivo);
 	strcat(caminho, ".txt");
 
-    printf("%s", caminho);
 	FILE *file;
   	file = fopen(caminho, "w");
 

@@ -6,6 +6,10 @@
 #include "funcoes.h";
 #include "dao_usuario.h";
 #include "view_usuario.h";
+#include "dao_veiculo.h"
+#include "view_veiculo.h"
+#include "dao_residencia.h"
+#include "view_residencia.h"
 #include "struct.h"
 
 void menu(){
@@ -49,9 +53,9 @@ void menuCadastro(){
     do{
         system("cls");
         fflush(stdin);
-        printf(" MENU - Cadastro \n");
+        printf("MENU - Cadastro \n");
         printf(" 1 - Funcionários\n");
-        printf(" 2 - Casa\n");
+        printf(" 2 - Residência\n");
         printf(" 3 - Veículo\n");
         printf(" 4 - Contas a pagar\n");
         printf(" 5 - Contas a receber\n");
@@ -66,16 +70,10 @@ void menuCadastro(){
                 cadastrarFuncionario();
                 break;
             case 2:
-                //Cadastro de casa falta entra com uma funÃ§Ã£o
-                system("cls");
-                fflush(stdin);
-                printf(" Cadastro de casa\n");
+                cadastrarResidencia();
                 break;
             case 3:
-                //Cadastro d veiculo
-                system("cls");
-                fflush(stdin);
-                printf(" Cadastro de veículo\n");
+                cadastrarVeiculo();
                 break;
             case 4:
                 //Cadastro de contas a pagar
@@ -89,12 +87,6 @@ void menuCadastro(){
                 fflush(stdin);
                 printf(" Cadastro de contas a receber\n");
                 break;
-            default: {
-                //Numero invalido
-                system("cls");
-                printf("Numero inválido");
-                break;
-            }
         }
     }while(menucadastro != 0);
 }
@@ -106,7 +98,7 @@ void menuAlterar(){
         fflush(stdin);
         printf("MENU - Alterar\n");
         printf(" 1 - Funcionário\n");
-        printf(" 2 - Casa\n");
+        printf(" 2 - Residência\n");
         printf(" 3 - Veículo\n");
         printf(" 4 - Conta a pagar\n");
         printf(" 5 - Conta a receber\n");
@@ -122,14 +114,10 @@ void menuAlterar(){
                 alterarFuncionario();
                 break;
             case 2:
-                //AlterÃ§Ã£o dos dados da casa
-                system("cls");
-                printf("AlteraÃ§Ã£o de casa");
+                alterarResidencia();
                 break;
             case 3:
-                //AlteraÃ§Ã£o de veÃ­culo
-                system("cls");
-                printf("AlteraÃ§Ã£o de veículos");
+                alterarVeiculo();
                 break;
             case 4:
                 //AlteraÃ§Ã£o de conta a pagar
@@ -150,10 +138,10 @@ void menuRelatorio(){
     do{
         system("cls");
         fflush(stdin);
-        printf(" MENU - Relatórios \n");
-        printf(" 1 - Funcionários\n");
-        printf(" 2 - Casas\n");
-        printf(" 3 - Veículos por casa\n");
+        printf(" MENU - Relatório \n");
+        printf(" 1 - Funcionário\n");
+        printf(" 2 - Residência\n");
+        printf(" 3 - Veículo\n");
         printf(" 4 - Contas a pagar\n");
         printf(" 5 - Contas a receber\n");
         printf(" 6 - Balanço mensal\n");
@@ -168,15 +156,11 @@ void menuRelatorio(){
                 break;
             }
             case 2: {
-                //AlterÃ§Ã£o dos dados da casa
-                system("cls");
-                printf("RelatÃ³rio de casa");
+                relatorioResidencia();
                 break;
             }
             case 3: {
-                //AlteraÃ§Ã£o de veÃ­culo
-                system("cls");
-                printf("RelatÃ³rio de veÃ­culos por casa");
+                relatorioVeiculo();
                 break;
             }
             case 4: {
@@ -339,14 +323,169 @@ void relatorioFuncionario(){
 void entradaVisitante(){
 }
 
-int cadastrarVeiculo(){
+void cadastrarVeiculo(){
     VEICULO veiculo;
-    printf(" PLACA: ");
+
+    system("cls");
+    fflush(stdin);
+	printf("Cadastro de veiculo\n");
+    printf("Placa: ");
     gets(veiculo.placa);
-    printf(" MODELO:");
+    printf("Modelo:");
     gets(veiculo.modelo);
-    printf(" COR:");
+    printf("Cor:");
     gets(veiculo.cor);
     printf("Código da casa: ");
     scanf("%d", &veiculo.idcasa);
+
+    view_gravarVeiculo(veiculo);
+}
+
+void alterarVeiculo(){
+    int opcao;
+    int repetir = 0;
+
+    do{
+        system("cls");
+        printf("Alterar veiculo\n");
+        printf("Deseja buscar o veiculo por: \n");
+        printf(" 1 - Código interno do veiculo\n");
+        printf(" 2 - Placa\n");
+        printf(" 3 - Casa\n");
+        printf(" 0 - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1:
+                repetir = view_alterarVeiculoPorID();
+                break;
+            case 2:
+                repetir = view_alterarVeiculoPorPlaca();
+                break;
+            case 3:
+                repetir = view_alterarVeiculoPorCasa();
+                break;
+            default:
+                printf("Opção inválida\n");
+        }
+    }while(opcao != 0 && repetir == 1);
+}
+
+void relatorioVeiculo(){
+    int opcao;
+    int repetir = 0;
+
+    do{
+        system("cls");
+        printf("Relatório de veículo\n");
+        printf("Deseja buscar por: \n");
+        printf(" 1 - Casa\n");
+        printf(" 2 - Todos\n");
+        printf(" 0 - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1:
+                repetir = view_relatorioVeiculoPorCasa();
+                break;
+            case 2:
+                repetir = view_relatorioVeiculos();
+                break;
+        }
+    }while(opcao != 0 && repetir == 1);
+}
+
+void cadastrarResidencia(){
+    RESIDENCIA residencia;
+
+    system("cls");
+    fflush(stdin);
+	printf("Cadastro de residência\n");
+    printf("Endereço: ");
+    gets(residencia.endereco);
+    printf("Número da residência: ");
+    scanf("%d", &residencia.numero_casa);
+    fflush(stdin);
+    printf("Bloco: ");
+    gets(residencia.bloco);
+
+    view_gravarResidencia(residencia);
+}
+
+void alterarResidencia(){
+    int opcao;
+    int repetir = 0;
+
+    do{
+        system("cls");
+        printf("Alterar residência\n");
+        printf("Deseja buscar o residência por: \n");
+        printf(" 1 - Código interno\n");
+        printf(" 2 - Número\n");
+        printf(" 3 - Bloco\n");
+        printf(" 0 - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1:
+                repetir = view_alterarResidenciaPorID();
+                break;
+            case 2:
+                repetir = view_alterarResidenciaPorNumero();
+                break;
+            case 3:
+                repetir = view_alterarResidenciaPorBloco();
+                break;
+            default:
+                printf("Opção inválida\n");
+        }
+    }while(opcao != 0 && repetir == 1);
+}
+
+void relatorioResidencia(){
+    int opcao;
+    int repetir = 0;
+
+    do{
+        system("cls");
+        printf("Relatório de residência\n");
+        printf("Deseja buscar por: \n");
+        printf(" 1 - Número\n");
+        printf(" 2 - Bloco\n");
+        printf(" 3 - Todos\n");
+        printf(" 0 - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1:
+                repetir = view_relatorioResidenciaPorNumero();
+                break;
+            case 2:
+                repetir = view_relatorioResidenciaPorBloco();
+                break;
+            case 3:
+                repetir = view_relatorioResidencias();
+                break;
+        }
+    }while(opcao != 0 && repetir == 1);
 }

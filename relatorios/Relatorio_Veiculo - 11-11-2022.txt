@@ -1,0 +1,6 @@
+Foram encontrados 4 veículos
+ID    | CASA  | PLACA     | MODELO                    | COR      
+2     | 1     | EMD2371   | ASTRA GMMM TESTE          | brancoooo 
+1     | 1     | emd2371   | ASTRA GM                  | branco   
+3     | 12    | emd2371   | ASTRA GM diego            | branco   
+4     | 13    | emd2371   | ASTRA GM domingos         | branco   

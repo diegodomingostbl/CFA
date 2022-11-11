@@ -1,0 +1,4 @@
+Foram encontradas 2 residências
+ID    | ENDEREÇO                  | NÚMERO | BLOCO  
+2     | rua domingos              | 2      | A      
+3     | Rua teste abreu           | 2      | B      

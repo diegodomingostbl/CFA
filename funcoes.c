@@ -156,3 +156,17 @@ bool validarDataEntrePeriodos(DATEC dt_inicial, DATEC dt_final, DATEC data){
 
     return false;
 }
+
+char* removerBarraN(char* str){
+    size_t len;
+
+    len = strlen(str);
+    if (len == 0) {
+        return str;
+    }
+    while(str[len - 1] == '\n'){
+        str[--len] = 0;
+    }
+
+    return str;
+}

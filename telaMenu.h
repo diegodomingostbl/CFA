@@ -5,10 +5,19 @@ void menu();
 void menuCadastro();
 void menuAlterar();
 void menuRelatorio();
+
 void cadastrarFuncionario();
 void alterarFuncionario();
 void relatorioFuncionario();
+
 void entradaVisitante();
-int cadastrarVeiculo();
+
+void cadastrarVeiculo();
+void alterarVeiculo();
+void relatorioVeiculo();
+
+void cadastrarResidencia();
+void alterarResidencia();
+void relatorioResidencia();
 
 #endif // TELAMENU_H_INCLUDED

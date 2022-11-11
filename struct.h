@@ -53,14 +53,20 @@ typedef struct{
     bool contaValida;
 }c_receber;
 
-struct veiculo {
-    char placa[7];
+typedef struct{
+    int id;
+    int idcasa;
+    char placa[8];
     char modelo[30];
     char cor[15];
-    int idcasa;
+}VEICULO;
 
-};
-typedef struct veiculo VEICULO;
+typedef struct{
+    int id;
+    char endereco[50];
+    int numero_casa;
+    char bloco[6];
+}RESIDENCIA;
 
 #endif // STRUCT_H_INCLUDED
 
