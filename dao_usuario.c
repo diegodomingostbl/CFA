@@ -107,7 +107,7 @@ USER procurarUsuarioLogin(char* cLogin){
         tokens = strSplit(linha, '|');
         if (tokens){
             int i;
-            if(strcmp(toLowerString(*(tokens + 4)), cLogin) == 0){
+            if(strcmp(toLowerString(*(tokens + 4)), toLowerString(cLogin)) == 0){
                 usuario = tokenToUser(tokens);
             }
             free(tokens);

@@ -308,3 +308,138 @@
 1668193523 c:\repositorio\cfa\view_visita.h
 	"struct.h"
 
+1669154476 source:c:\users\yago_\repositorios\cfa\dao_residencia.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_residencia.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\dao_residencia.h
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\struct.h
+	<stdbool.h>
+
+1669154476 c:\users\yago_\repositorios\cfa\funcoes.h
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\dao_usuario.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_usuario.h"
+	"funcoes.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\dao_usuario.h
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\dao_veiculo.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_veiculo.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\dao_veiculo.h
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\dao_visita.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_visita.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\dao_visita.h
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\funcoes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<time.h>
+	"struct.h"
+	"funcoes.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\login.c
+	<stdio.h>
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	<stdbool.h>
+	<windows.h>
+	"login.h"
+	"dao_usuario.h"
+	"funcoes.h"
+	"telaMenu.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\login.h
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\telamenu.h
+
+1669154476 source:c:\users\yago_\repositorios\cfa\main.c
+	<stdio.h>
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	<stdbool.h>
+	<windows.h>
+	"login.h"
+	"dao_usuario.h"
+	"struct.h"
+
+1669156558 source:c:\users\yago_\repositorios\cfa\telamenu.c
+	<stdio.h>
+	<locale.h>
+	<ctype.h>
+	"telaMenu.h"
+	"funcoes.h"
+	"dao_usuario.h"
+	"view_usuario.h"
+	"dao_veiculo.h"
+	"view_veiculo.h"
+	"dao_residencia.h"
+	"view_residencia.h"
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\view_usuario.h
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\view_veiculo.h
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\view_residencia.h
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\view_residencia.c
+	<stdio.h>
+	"view_residencia.h"
+	"dao_residencia.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\view_usuario.c
+	<stdio.h>
+	<ctype.h>
+	"view_usuario.h"
+	"dao_usuario.h"
+	"funcoes.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\view_veiculo.c
+	<stdio.h>
+	"view_veiculo.h"
+	"dao_veiculo.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 source:c:\users\yago_\repositorios\cfa\view_visita.c
+	"view_visita.h"
+	"dao_visita.h"
+	"funcoes.h"
+	"struct.h"
+
+1669154476 c:\users\yago_\repositorios\cfa\view_visita.h
+	"struct.h"
+
