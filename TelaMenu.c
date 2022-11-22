@@ -39,10 +39,7 @@ void menu(){
                 menuRelatorio();
                 break;
             case 4:
-                //entradavisitante;
-                system("cls");
-                fflush(stdin);
-                printf("Entrada de visitante");
+                menuEntradaVisitante();
                 break;
         }
     }while(menu != 0);
@@ -138,7 +135,7 @@ void menuRelatorio(){
     do{
         system("cls");
         fflush(stdin);
-        printf(" MENU - Relatório \n");
+        printf("MENU - Relatório \n");
         printf(" 1 - Funcionário\n");
         printf(" 2 - Residência\n");
         printf(" 3 - Veículo\n");
@@ -146,62 +143,64 @@ void menuRelatorio(){
         printf(" 5 - Contas a receber\n");
         printf(" 6 - Balanço mensal\n");
         printf(" 7 - Balanço anual\n");
-        printf(" 8 - Entrada e saída de visitantes por mês\n");
+        printf(" 8 - Visitas\n");
         printf(" 0 - Voltar\n");
         printf("Escolha um menu: ");
         scanf("%d", &menurelatorio);
         switch (menurelatorio){
-            case 1: {
+            case 1:
                 relatorioFuncionario();
                 break;
-            }
-            case 2: {
+            case 2:
                 relatorioResidencia();
                 break;
-            }
-            case 3: {
+            case 3:
                 relatorioVeiculo();
                 break;
-            }
-            case 4: {
+            case 4:
                 //AlteraÃ§Ã£o de conta a pagar
                 system("cls");
                 printf("RelatÃ³rio de contas a pagar");
                 break;
-            }
-            case 5: {
+            case 5:
                 //AlteraÃ§Ã£o de conta a receber
                 system("cls");
                 printf("RelatÃ³rio de conta a receber");
                 break;
-            }
-            case 6: {
+            case 6:
                 system("cls");
                 printf("RelatÃ³rio de balanÃ§o mensal");
                 break;
-            }
-            case 7:{
+            case 7:
                 system("cls");
                 printf("RelatÃ³rio de balanÃ§o anual");
                 break;
-            }
-            case 8:{
-                system("cls");
-                printf("RelatÃ³rio de entrada e saÃ­da por mÃªs");
+            case 8:
+                relatorioVisitaPorVeiculo();
                 break;
-            }
-            case 9:{
-                system("cls");
-                printf("Voltar");
-                break;
-            }
-            default:{
-                system("cls");
-                printf("***ERRO***");
-                printf("OpÃ§Ã£o invÃ¡lida tente novamente");
-            }
         }
     }while(menurelatorio != 0);
+}
+
+void menuEntradaVisitante(){
+    int menuVisita;
+    do{
+        system("cls");
+        fflush(stdin);
+        printf("MENU - Entrada de visitante \n");
+        printf(" 1 - Veículo\n");
+        printf(" 2 - Pessoa\n");
+        printf(" 0 - Voltar\n");
+        printf("Escolha um menu: ");
+        scanf("%d", &menuVisita);
+        switch (menuVisita){
+            case 1:
+                entradaVisitanteVeiculo();
+                break;
+            case 2:
+                entradaVisitantePessoa();
+                break;}
+    }while(menuVisita != 0);
 }
 
 void cadastrarFuncionario(){
@@ -318,9 +317,6 @@ void relatorioFuncionario(){
                 break;
         }
     }while(opcao != 0 && repetir == 1);
-}
-
-void entradaVisitante(){
 }
 
 void cadastrarVeiculo(){
@@ -485,6 +481,81 @@ void relatorioResidencia(){
                 break;
             case 3:
                 repetir = view_relatorioResidencias();
+                break;
+        }
+    }while(opcao != 0 && repetir == 1);
+}
+
+void entradaVisitanteVeiculo(){
+    E_VEICULO visita;
+
+    system("cls");
+    fflush(stdin);
+    printf("Entrada de visita com veículo\n");
+    printf("Residência visitada (ID): ");
+    scanf("%d", &visita.visitando_residencia);
+    fflush(stdin);
+    printf("Placa do veículo: ");
+    gets(visita.placa);
+    printf("Nome completo do motorista: ");
+    gets(visita.nomeSobrenomeMotorista);
+
+    view_gravarVisitaVeiculo(visita);
+
+    system("cls");
+    printf("Entrada de visitante com veículo liberada\n");
+    system("PAUSE");
+}
+
+void entradaVisitantePessoa(){
+    E_PESSOA pessoa;
+
+    system("cls");
+    fflush(stdin);
+    printf("Entrada de visita\n");
+    printf("Residência visitada (ID): ");
+    scanf("%d", &pessoa.visitando_residencia);
+    fflush(stdin);
+    printf("Nome completo: ");
+    gets(pessoa.nomeSobrenome);
+    printf("CPF (sem pontuação): ");
+	gets(pessoa.CPF);
+
+    view_gravarVisitaPessoa(pessoa);
+
+    system("cls");
+    printf("Entrada de visitante liberada\n");
+    system("PAUSE");
+}
+
+void relatorioVisitaPorVeiculo(){
+    int opcao;
+    int repetir = 0;
+
+    do{
+        system("cls");
+        printf("Relatório de visitas\n");
+        printf("Deseja buscar por: \n");
+        printf(" 1 - Placa\n");
+        printf(" 2 - Data de entrada\n");
+        printf(" 3 - Nome\n");
+        printf(" 0 - Voltar\n");
+        printf("Digite uma das opções acima: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao){
+            case 0:
+                return;
+                break;
+            case 1:
+                repetir = view_relatorioFuncionarioPorNome();
+                break;
+            case 2:
+                repetir = view_relatorioFuncionarioPorDataCadastro();
+                break;
+            case 3:
+                repetir = view_relatorioFuncionarioPorDataNascimento();
                 break;
         }
     }while(opcao != 0 && repetir == 1);

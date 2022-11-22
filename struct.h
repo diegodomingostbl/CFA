@@ -3,12 +3,11 @@
 #ifndef STRUCT_H_INCLUDED
 #define STRUCT_H_INCLUDED
 
-struct data{
-	int dia;
+typedef struct{
+    int dia;
 	int mes;
 	int ano;
-};
-typedef struct data DATEC;
+}DATEC;
 
 struct usuario{
     int id;
@@ -67,6 +66,24 @@ typedef struct{
     int numero_casa;
     char bloco[6];
 }RESIDENCIA;
+
+typedef struct{
+    int id;
+    int visitando_residencia;
+    char placa[8];
+    char nomeSobrenomeMotorista[60];
+    DATEC data_entrada;
+
+}E_VEICULO;
+
+typedef struct{
+    int id;
+    int visitando_residencia;
+    char CPF[12];
+    char nomeSobrenome[60];
+    DATEC data_entrada;
+
+}E_PESSOA;
 
 #endif // STRUCT_H_INCLUDED
 

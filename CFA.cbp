@@ -5,7 +5,7 @@
 		<Option title="CFA" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="ControllerUsuario/;ControllerLogin/;ControllerVeiculo/" />
+		<Option virtualFolders="ControllerUsuario/;ControllerLogin/;ControllerVeiculo/;ControllerResidencia/;ControllerVisita/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/CFA" prefix_auto="1" extension_auto="1" />
@@ -32,6 +32,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dao_residencia.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerResidencia/" />
+		</Unit>
+		<Unit filename="dao_residencia.h">
+			<Option virtualFolder="ControllerResidencia/" />
+		</Unit>
 		<Unit filename="dao_usuario.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="ControllerUsuario/" />
@@ -45,6 +52,13 @@
 		</Unit>
 		<Unit filename="dao_veiculo.h">
 			<Option virtualFolder="ControllerVeiculo/" />
+		</Unit>
+		<Unit filename="dao_visita.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerVisita/" />
+		</Unit>
+		<Unit filename="dao_visita.h">
+			<Option virtualFolder="ControllerVisita/" />
 		</Unit>
 		<Unit filename="funcoes.c">
 			<Option compilerVar="CC" />
@@ -65,6 +79,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="telaMenu.h" />
+		<Unit filename="view_residencia.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerResidencia/" />
+		</Unit>
+		<Unit filename="view_residencia.h">
+			<Option virtualFolder="ControllerResidencia/" />
+		</Unit>
 		<Unit filename="view_usuario.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="ControllerUsuario/" />
@@ -78,6 +99,13 @@
 		</Unit>
 		<Unit filename="view_veiculo.h">
 			<Option virtualFolder="ControllerVeiculo/" />
+		</Unit>
+		<Unit filename="view_visita.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerVisita/" />
+		</Unit>
+		<Unit filename="view_visita.h">
+			<Option virtualFolder="ControllerVisita/" />
 		</Unit>
 		<Extensions />
 	</Project>

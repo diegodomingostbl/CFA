@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1668182814 source:c:\repositorio\cfa\telamenu.c
+1668193719 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -97,7 +97,7 @@
 	"view_residencia.h"
 	"struct.h"
 
-1668174860 c:\repositorio\cfa\struct.h
+1668193076 c:\repositorio\cfa\struct.h
 	<stdbool.h>
 
 1667338914 c:\repositorio\cfa\archive.h
@@ -237,7 +237,7 @@
 1667622302 c:\repositorio\cfa\login.h
 	"struct.h"
 
-1668181403 c:\repositorio\cfa\telamenu.h
+1668194399 c:\repositorio\cfa\telamenu.h
 
 1668047386 c:\repositorio\cfa\view_usuario.h
 	"struct.h"
@@ -279,7 +279,7 @@
 1668182634 c:\repositorio\cfa\dao_residencia.h
 	"struct.h"
 
-1668181546 source:c:\repositorio\cfa\view_residencia.c
+1668182845 source:c:\repositorio\cfa\view_residencia.c
 	<stdio.h>
 	"view_residencia.h"
 	"dao_residencia.h"
@@ -287,5 +287,24 @@
 	"struct.h"
 
 1668182809 c:\repositorio\cfa\view_residencia.h
+	"struct.h"
+
+1668193776 source:c:\repositorio\cfa\dao_visita.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_visita.h"
+	"funcoes.h"
+	"struct.h"
+
+1668193617 c:\repositorio\cfa\dao_visita.h
+	"struct.h"
+
+1668193878 source:c:\repositorio\cfa\view_visita.c
+	"view_visita.h"
+	"dao_visita.h"
+	"funcoes.h"
+	"struct.h"
+
+1668193523 c:\repositorio\cfa\view_visita.h
 	"struct.h"
 
