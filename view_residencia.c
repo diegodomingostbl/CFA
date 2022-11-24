@@ -19,9 +19,9 @@ int view_alterarResidenciaPorID(){
     do{
         fflush(stdin);
         system("cls");
-        printf("Alterar veículo\n");
+        printf("Alterar residência\n");
         printf("Digite 0 (zero) para voltar\n");
-        printf("Digite o código interno do veículo: ");
+        printf("Digite o código interno da residência: ");
         scanf("%d", &id_residencia);
 
         if(id_residencia > 0){
@@ -29,7 +29,7 @@ int view_alterarResidenciaPorID(){
             if(residencia.id > 0){
                 view_alterarResidencia(residencia);
             }else{
-                printf("Veículo não encontrado!\n");
+                printf("Residência não encontrado!\n");
                 printf("Deseja buscá-lo novamente ? (S para SIM / N para NÃO): ");
                 buscar_novamente = getche();
             }
