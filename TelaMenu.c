@@ -157,8 +157,7 @@ void menuRelatorio(){
                 view_relatorioBalancoPorPeriodo();
                 break;
             case 7:
-                system("cls");
-                printf("Relatório de balanço anual");
+                view_relatorioVisitaPessoa();
                 break;
             case 8:
                 relatorioVisitaPorVeiculo();

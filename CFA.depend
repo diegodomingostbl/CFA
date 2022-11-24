@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1669326949 source:c:\repositorio\cfa\telamenu.c
+1669329385 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -289,17 +289,19 @@
 1668182809 c:\repositorio\cfa\view_residencia.h
 	"struct.h"
 
-1668193776 source:c:\repositorio\cfa\dao_visita.c
+1669330086 source:c:\repositorio\cfa\dao_visita.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_visita.h"
 	"funcoes.h"
 	"struct.h"
 
-1668193617 c:\repositorio\cfa\dao_visita.h
+1669329348 c:\repositorio\cfa\dao_visita.h
 	"struct.h"
 
-1668193878 source:c:\repositorio\cfa\view_visita.c
+1669329991 source:c:\repositorio\cfa\view_visita.c
+	<stdio.h>
+	<stdlib.h>
 	"view_visita.h"
 	"dao_visita.h"
 	"funcoes.h"
@@ -461,7 +463,7 @@
 1669326276 c:\repositorio\cfa\dao_conta_pagar.h
 	"struct.h"
 
-1669255594 source:c:\repositorio\cfa\view_conta_pagar.c
+1669328074 source:c:\repositorio\cfa\view_conta_pagar.c
 	<stdio.h>
 	<stdlib.h>
 	"view_conta_pagar.h"

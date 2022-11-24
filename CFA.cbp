@@ -5,7 +5,7 @@
 		<Option title="CFA" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="ControllerUsuario/;ControllerLogin/;ControllerVeiculo/;ControllerResidencia/;ControllerVisita/;ControllerContaPagar/;ControllerContaReceber/" />
+		<Option virtualFolders="ControllerUsuario/;ControllerLogin/;ControllerVeiculo/;ControllerResidencia/;ControllerVisita/;ControllerContaPagar/;ControllerContaReceber/;ControllerBalanco/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/CFA" prefix_auto="1" extension_auto="1" />
@@ -32,6 +32,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dao_balanco.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerBalanco/" />
+		</Unit>
+		<Unit filename="dao_balanco.h">
+			<Option virtualFolder="ControllerBalanco/" />
+		</Unit>
 		<Unit filename="dao_conta_pagar.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="ControllerContaPagar/" />
@@ -93,6 +100,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="telaMenu.h" />
+		<Unit filename="view_balanco.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="ControllerBalanco/" />
+		</Unit>
+		<Unit filename="view_balanco.h">
+			<Option virtualFolder="ControllerBalanco/" />
+		</Unit>
 		<Unit filename="view_conta_pagar.c">
 			<Option compilerVar="CC" />
 			<Option virtualFolder="ControllerContaPagar/" />

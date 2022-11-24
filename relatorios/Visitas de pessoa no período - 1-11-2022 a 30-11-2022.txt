@@ -1,0 +1,6 @@
+Foram encontrados 4 visitas de pessoas
+ID    | RESIDÊNCIA   | NOME COMPLETO                  | CPF             | DATA DE ENTRADA
+1     | 1            | Diego Cesar Domingos           | 49016333843     | 11/11/2022  
+2     | 1            | diego                          | 49016333843     | 17/11/2022  
+3     | 2            | Diego Cesar Domingos           | 49016333843     | 23/11/2022  
+4     | 4            | Diego Cesar Domingos           | 49016333843     | 23/11/2022  
