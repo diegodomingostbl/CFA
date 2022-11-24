@@ -261,10 +261,10 @@ int dao_gravarRelatorioVisitaVeiculo(E_VEICULO* veiculo, int qtdVeiculo, char* n
   		return 0;
 	}
 
-	fprintf(file, "Foram encontrados %d visitas de pessoas\n", qtdVeiculo);
-    fprintf(file, "%-5s | %-12s | %-20s | %-15s | %-12s\n", "ID", "RESIDÊNCIA", "NOME COMPLETO", "CPF", "DATA DE ENTRADA");
+	fprintf(file, "Foram encontradas %d visitas com veículo\n", qtdVeiculo);
+    fprintf(file, "%-5s | %-12s | %-30s | %-15s | %-12s\n", "ID", "RESIDÊNCIA", "NOME COMPLETO", "PLACA", "DATA DE ENTRADA");
     for(int i = 0; i < qtdVeiculo; i++){
-        fprintf(file, "%-5d | %-12d | %-20s | %-15s | %-12s\n", (veiculo + i)->id, (veiculo + i)->visitando_residencia, (veiculo + i)->nomeSobrenomeMotorista, (veiculo + i)->placa, DateToString((veiculo + i)->data_entrada));
+        fprintf(file, "%-5d | %-12d | %-30s | %-15s | %-12s\n", (veiculo + i)->id, (veiculo + i)->visitando_residencia, (veiculo + i)->nomeSobrenomeMotorista, (veiculo + i)->placa, DateToString((veiculo + i)->data_entrada));
     }
 
     fclose(file);

@@ -160,7 +160,7 @@ void menuRelatorio(){
                 view_relatorioVisitaPessoa();
                 break;
             case 8:
-                relatorioVisitaPorVeiculo();
+                view_relatorioVisitaVeiculo();
                 break;
         }
     }while(menurelatorio != 0);

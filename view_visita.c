@@ -102,7 +102,7 @@ int view_relatorioVisitaPessoa(){
 
     return 0;
 }
-/*
+
 int view_relatorioVisitaVeiculo(){
     E_VEICULO* veiculo;
     int qtdVeiculo = 0;
@@ -145,11 +145,11 @@ int view_relatorioVisitaVeiculo(){
             veiculo = dao_procuraVisitaVeiculoData(data_inicial, data_final, &qtdVeiculo);
 
             if(qtdVeiculo > 0){
-                printf("\nForam encontradas %d visitas de pessoas\n", qtdVeiculo);
-                printf("%-5s | %-12s | %-30s | %-15s | %-12s\n", "ID", "RESIDÊNCIA", "NOME COMPLETO", "CPF", "DATA DE ENTRADA");
+                printf("\nForam encontradas %d visitas com veículo\n", qtdVeiculo);
+                printf("%-5s | %-12s | %-30s | %-15s | %-12s\n", "ID", "RESIDÊNCIA", "NOME COMPLETO", "PLACA", "DATA DE ENTRADA");
 
                 for(int i = 0; i < qtdVeiculo; i++){
-                    printf("%-5d | %-12d | %-30s | %-15s | %-12s\n", (veiculo + i)->id, (veiculo + i)->visitando_residencia, (veiculo + i)->nomeSobrenomeMotorista, (veiculo + i)->CPF, DateToString((veiculo + i)->data_entrada));
+                    printf("%-5d | %-12d | %-30s | %-15s | %-12s\n", (veiculo + i)->id, (veiculo + i)->visitando_residencia, (veiculo + i)->nomeSobrenomeMotorista, (veiculo + i)->placa, DateToString((veiculo + i)->data_entrada));
                 }
                 printf("Deseja salvar o relatório ? (S para SIM / N para NÃO): ");
                 gravar = getche();
@@ -168,7 +168,7 @@ int view_relatorioVisitaVeiculo(){
                     strcat(nome_arquivo, IntToString(data_final.mes));
                     strcat(nome_arquivo, "-");
                     strcat(nome_arquivo, IntToString(data_final.ano));
-                    dao_gravarRelatorioVisitaPessoa(veiculo, qtdVeiculo, nome_arquivo);
+                    dao_gravarRelatorioVisitaVeiculo(veiculo, qtdVeiculo, nome_arquivo);
                 }
             }else{
                 printf("Não foram encontradas visitas com veículo neste período!\n");
@@ -184,5 +184,5 @@ int view_relatorioVisitaVeiculo(){
     }while(toupper(buscar_novamente) == 'S');
 
     return 0;
-}*/
+}
 

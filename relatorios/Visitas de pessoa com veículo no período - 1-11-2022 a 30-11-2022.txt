@@ -1,0 +1,4 @@
+Foram encontradas 2 visitas com veículo
+ID    | RESIDÊNCIA   | NOME COMPLETO                  | PLACA           | DATA DE ENTRADA
+1     | 2            | Diego Cesar Domingos           | emd2371         | 11/11/2022  
+2     | 2            | Diego Cesar Domingos           | emd2371         | 23/11/2022  
