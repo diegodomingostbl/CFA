@@ -54,6 +54,10 @@ int gravarUsuario(USER usuario){
 	fprintf(file, linha);
     fclose(file);
 
+    system("cls");
+    printf("Funcionário cadastrado com sucesso.\n");
+    system("PAUSE");
+
 	return 1;
 }
 
@@ -476,6 +480,12 @@ int dao_gravarRelatorioFuncionario(USER* usuario, int qtdUsuario, char* nome_arq
     }
 
     fclose(file);
+
+
+    system("cls");
+    printf("Relatório de funcionário gerado com sucesso.\n");
+    system("PAUSE");
+
 
 	return 1;
 }

@@ -27,6 +27,10 @@ int dao_gravarContaPagar(C_PAGAR conta_pagar){
 	fprintf(file, linha);
     fclose(file);
 
+    system("cls");
+    printf("Conta a pagar cadastrada com sucesso.\n");
+    system("PAUSE");
+
 	return 1;
 }
 

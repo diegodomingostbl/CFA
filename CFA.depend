@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1669253517 source:c:\repositorio\cfa\telamenu.c
+1669267113 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -279,7 +279,7 @@
 1668182634 c:\repositorio\cfa\dao_residencia.h
 	"struct.h"
 
-1668182845 source:c:\repositorio\cfa\view_residencia.c
+1669256770 source:c:\repositorio\cfa\view_residencia.c
 	<stdio.h>
 	"view_residencia.h"
 	"dao_residencia.h"
@@ -446,10 +446,10 @@
 1669248647 source:c:\repositorio\cfa\dao_conta_receber.c
 	"dao_conta_receber.h"
 
-1669249279 c:\repositorio\cfa\dao_conta_receber.h
+1669266914 c:\repositorio\cfa\dao_conta_receber.h
 	"struct.h"
 
-1669255537 source:c:\repositorio\cfa\dao_conta_pagar.c
+1669255847 source:c:\repositorio\cfa\dao_conta_pagar.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_conta_pagar.h"
@@ -468,9 +468,13 @@
 1669251039 c:\repositorio\cfa\view_conta_pagar.h
 	"struct.h"
 
-1669248638 source:c:\repositorio\cfa\view_conta_receber.c
+1669267037 source:c:\repositorio\cfa\view_conta_receber.c
+	<stdio.h>
+	<stdlib.h>
 	"view_conta_receber.h"
+	"dao_conta_receber.h"
+	"funcoes.h"
 
-1669249513 c:\repositorio\cfa\view_conta_receber.h
+1669267031 c:\repositorio\cfa\view_conta_receber.h
 	"struct.h"
 

@@ -28,6 +28,10 @@ int dao_gravarResidencia(RESIDENCIA residencia){
 	fprintf(file, linha);
     fclose(file);
 
+    system("cls");
+    printf("Residência cadastrada com sucesso.\n");
+    system("PAUSE");
+
 	return 1;
 }
 
@@ -149,7 +153,7 @@ void dao_alterarResidencia(RESIDENCIA residencia){
 	fclose(file);
 
 	system("cls");
-	printf("Residência %d alterado com sucesso.\n", residencia.id);
+	printf("Residência %d alterada com sucesso.\n", residencia.id);
 	system("PAUSE");
 	system("cls");
 }

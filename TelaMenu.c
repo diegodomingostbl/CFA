@@ -114,9 +114,7 @@ void menuAlterar(){
                 view_alterarContaPagarPorID();
                 break;
             case 5:
-                //Alteração de conta a receber
-                system("cls");
-                printf("Alteração de conta a receber");
+                view_alterarContaReceberPorID();
                 break;
         }
     }while(menualterar != 0);
@@ -153,9 +151,7 @@ void menuRelatorio(){
                 view_relatorioContaPagarPorDataVencimento();
                 break;
             case 5:
-                //Alteração de conta a receber
-                system("cls");
-                printf("Relatório de conta a receber");
+                view_relatorioContaReceberPorDataVencimento();
                 break;
             case 6:
                 system("cls");
@@ -603,5 +599,5 @@ void cadastrarContaReceber(){
     scanf("%f", &c_receber.valor);
     fflush(stdin);
 
-    //view_gravarResidencia(c_receber);
+    view_gravarContaReceber(c_receber);
 }

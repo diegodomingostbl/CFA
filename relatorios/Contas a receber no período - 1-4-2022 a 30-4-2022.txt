@@ -1,0 +1,4 @@
+Foram encontrados 2 contas a receber
+ID    | NOME                 | DATA VENCIMENTO   | VALOR     
+2     | diego cesar          | 7/4/2022          | 212,30    
+1     | Diego Cesar Domingos | 1/4/2022          | 100,00    

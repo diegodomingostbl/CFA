@@ -30,6 +30,10 @@ int dao_gravarVeiculo(VEICULO veiculo){
 	fprintf(file, linha);
     fclose(file);
 
+    system("cls");
+    printf("Veículo cadastrado com sucesso.\n");
+    system("PAUSE");
+
 	return 1;
 }
 
