@@ -40,17 +40,18 @@ typedef struct userLogado USERLOGIN;
 
 typedef struct{
     int id;
-    char nome[50], dia[3], mes[3], ano[5];
+    char nome[50];
+    DATEC dt_vencimento;
     float valor;
-    bool contaValida;
-}c_pagar;
+}C_PAGAR;
 
 typedef struct{
     int id;
-    char nome[50], dia[3], mes[3], ano[5];
+    char nome[50];
+    int residencia;
+    DATEC dt_vencimento;
     float valor;
-    bool contaValida;
-}c_receber;
+}C_RECEBER;
 
 typedef struct{
     int id;

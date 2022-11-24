@@ -215,7 +215,7 @@ void view_AlterarUsuarioPorUSER(USER usuario){
         printf(" 10  - Cidade: %s\n", usuario.cidade);
         printf(" 11 - UF: %s\n", usuario.endereco);
         printf(" 12 - Login: %s\n", usuario.login);
-        printf(" 13 - Senha\n");
+        printf(" 13 - Senha: ******\n");
         printf("  0 - Voltar\n");
         printf("Qual informação deseja alterar ? ");
         scanf("%d", &opcao);
@@ -279,7 +279,7 @@ void view_AlterarUsuarioPorUSER(USER usuario){
                     break;
                 case 13:
                     printf("Senha: ");
-                    gets(usuario.senha);
+                    gets(usuarioAlterado.senha);
                     break;
             }
 

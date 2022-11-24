@@ -14,6 +14,7 @@ void main(){
 }
 
 /*
+
 typedef struct{
     char nome[50], dia[3], mes[3], ano[5];
     float valor;

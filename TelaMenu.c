@@ -18,12 +18,12 @@ void menu(){
     do{
         system("cls");
         printf("CFA - Controle de fluxo automotivo\n");
-        printf("[1] - Cadastro\n");
-        printf("[2] - Alteração de cadastro\n");
-        printf("[3] - Relatórios\n");
-        printf("[4] - Entrada de visitante\n");
-        printf("[0] - Logout\n");
-        printf("Escolha um menu: ");
+        printf(" 1 - Cadastro\n");
+        printf(" 2 - Alteração de cadastro\n");
+        printf(" 3 - Relatórios\n");
+        printf(" 4 - Entrada de visitante\n");
+        printf(" 0 - Logout\n");
+        printf("Digite uma das opções acima: ");
         scanf("%i", &menu);
         switch (menu){
             case 0:
@@ -57,7 +57,7 @@ void menuCadastro(){
         printf(" 4 - Contas a pagar\n");
         printf(" 5 - Contas a receber\n");
         printf(" 0 - Voltar\n");
-        printf("Escolha um menu: ");
+        printf("Digite uma das opções acima: ");
         scanf("%d", &menucadastro);
         switch (menucadastro){
             case 0:
@@ -73,16 +73,10 @@ void menuCadastro(){
                 cadastrarVeiculo();
                 break;
             case 4:
-                //Cadastro de contas a pagar
-                system("cls");
-                fflush(stdin);
-                printf(" Cadastro de contas a pagar\n");
+                cadastrarContaPagar();
                 break;
             case 5:
-                //Cadastro de contas a receber
-                system("cls");
-                fflush(stdin);
-                printf(" Cadastro de contas a receber\n");
+                cadastrarContaReceber();
                 break;
         }
     }while(menucadastro != 0);
@@ -100,7 +94,7 @@ void menuAlterar(){
         printf(" 4 - Conta a pagar\n");
         printf(" 5 - Conta a receber\n");
         printf(" 0 - Voltar\n");
-        printf("Escolha um menu: ");
+        printf("Digite uma das opções acima: ");
         scanf("%d", &menualterar);
         switch (menualterar){
             case 0:
@@ -117,9 +111,7 @@ void menuAlterar(){
                 alterarVeiculo();
                 break;
             case 4:
-                //AlteraÃ§Ã£o de conta a pagar
-                system("cls");
-                printf("AlteraÃ§Ã£o de contas a pagar");
+                view_alterarContaPagarPorID();
                 break;
             case 5:
                 //AlteraÃ§Ã£o de conta a receber
@@ -145,7 +137,7 @@ void menuRelatorio(){
         printf(" 7 - Balanço anual\n");
         printf(" 8 - Visitas\n");
         printf(" 0 - Voltar\n");
-        printf("Escolha um menu: ");
+        printf("Digite uma das opções acima: ");
         scanf("%d", &menurelatorio);
         switch (menurelatorio){
             case 1:
@@ -158,9 +150,7 @@ void menuRelatorio(){
                 relatorioVeiculo();
                 break;
             case 4:
-                //AlteraÃ§Ã£o de conta a pagar
-                system("cls");
-                printf("RelatÃ³rio de contas a pagar");
+                view_relatorioContaPagarPorDataVencimento();
                 break;
             case 5:
                 //AlteraÃ§Ã£o de conta a receber
@@ -191,7 +181,7 @@ void menuEntradaVisitante(){
         printf(" 1 - Veículo\n");
         printf(" 2 - Pessoa\n");
         printf(" 0 - Voltar\n");
-        printf("Escolha um menu: ");
+        printf("Digite uma das opções acima: ");
         scanf("%d", &menuVisita);
         switch (menuVisita){
             case 1:
@@ -213,7 +203,7 @@ void cadastrarFuncionario(){
 	gets(usuario.nome);
 	printf("Sobrenome: ");
 	gets(usuario.sobrenome);
-	printf("CPF (sem pontuação)");
+	printf("CPF (sem pontuação): ");
 	gets(usuario.CPF);
 	printf("Data de nascimento: \n");
 	printf("	Dia: ");
@@ -224,12 +214,14 @@ void cadastrarFuncionario(){
 	scanf("%d", &usuario.dt_nascimento.ano);
 	printf("Salário: ");
 	scanf("%f", &usuario.salario);
+	fflush(stdin);
 	printf("Cargo: ");
 	gets(usuario.cargo);
 	printf("Endereço: ");
 	gets(usuario.endereco);
 	printf("Número: ");
 	scanf("%d", &usuario.numeroDaCasa);
+	fflush(stdin);
 	printf("Bairro: ");
 	gets(usuario.bairro);
 	printf("Cidade: ");
@@ -559,4 +551,57 @@ void relatorioVisitaPorVeiculo(){
                 break;
         }
     }while(opcao != 0 && repetir == 1);
+}
+
+void cadastrarContaPagar(){
+    C_PAGAR c_pagar;
+
+    system("cls");
+	printf("Cadastro de contas a pagar\n");
+
+	fflush(stdin);
+    printf("Nome do fornecedor: ");
+    gets(c_pagar.nome);
+    fflush(stdin);
+
+    printf("Data de vencimento: \n");
+	printf("	Dia: ");
+	scanf("%d", &c_pagar.dt_vencimento.dia);
+	printf("	Mês: ");
+	scanf("%d", &c_pagar.dt_vencimento.mes);
+	printf("	Ano: ");
+	scanf("%d", &c_pagar.dt_vencimento.ano);
+
+    printf("Valor: R$ ");
+    scanf("%f", &c_pagar.valor);
+    fflush(stdin);
+
+    view_gravarContaPagar(c_pagar);
+}
+
+void cadastrarContaReceber(){
+    C_RECEBER c_receber;
+
+    system("cls");
+	printf("Cadastro de contas a receber\n");
+
+	fflush(stdin);
+    printf("Nome: ");
+    gets(c_receber.nome);
+    fflush(stdin);
+    printf("Residência (ID): ");
+    scanf("%f", &c_receber.residencia);
+    printf("Data de vencimento: \n");
+	printf("	Dia: ");
+	scanf("%d", &c_receber.dt_vencimento.dia);
+	printf("	Mês: ");
+	scanf("%d", &c_receber.dt_vencimento.mes);
+	printf("	Ano: ");
+	scanf("%d", &c_receber.dt_vencimento.ano);
+
+    printf("Valor: R$ ");
+    scanf("%f", &c_receber.valor);
+    fflush(stdin);
+
+    //view_gravarResidencia(c_receber);
 }

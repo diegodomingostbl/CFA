@@ -1,0 +1,4 @@
+Foram encontrados 2 contas a pagar
+ID    | NOME                 | DATA VENCIMENTO   | VALOR     
+1     | diego                | 1/2/2023          | 40,12     
+2     | Diego Cesar          | 4/2/2023          | 123,00    

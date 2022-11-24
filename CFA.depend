@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 54 <<<<<<< HEAD
 
-1668107551 source:c:\repositorio\cfa\funcoes.c
+1669254908 source:c:\repositorio\cfa\funcoes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -62,7 +62,7 @@
 	"dao_usuario.h"
 	"struct.h"
 
-1667828175 source:c:\repositorio\cfa\main.c
+1669249367 source:c:\repositorio\cfa\main.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1668193719 source:c:\repositorio\cfa\telamenu.c
+1669253517 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -97,7 +97,7 @@
 	"view_residencia.h"
 	"struct.h"
 
-1668193076 c:\repositorio\cfa\struct.h
+1669249107 c:\repositorio\cfa\struct.h
 	<stdbool.h>
 
 1667338914 c:\repositorio\cfa\archive.h
@@ -213,7 +213,7 @@
 	"dao_usuario.h"
 	"funcoes.h"
 
-1668168996 source:c:\repositorio\cfa\dao_usuario.c
+1669245752 source:c:\repositorio\cfa\dao_usuario.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_usuario.h"
@@ -222,7 +222,7 @@
 1668047372 c:\repositorio\cfa\dao_usuario.h
 	"struct.h"
 
-1667622302 source:c:\repositorio\cfa\login.c
+1669245930 source:c:\repositorio\cfa\login.c
 	<stdio.h>
 	<ctype.h>
 	<locale.h>
@@ -242,7 +242,7 @@
 1668047386 c:\repositorio\cfa\view_usuario.h
 	"struct.h"
 
-1668047539 source:c:\repositorio\cfa\view_usuario.c
+1669245896 source:c:\repositorio\cfa\view_usuario.c
 	<stdio.h>
 	<ctype.h>
 	"view_usuario.h"
@@ -441,5 +441,36 @@
 	"struct.h"
 
 1669154476 c:\users\yago_\repositorios\cfa\view_visita.h
+	"struct.h"
+
+1669248647 source:c:\repositorio\cfa\dao_conta_receber.c
+	"dao_conta_receber.h"
+
+1669249279 c:\repositorio\cfa\dao_conta_receber.h
+	"struct.h"
+
+1669255537 source:c:\repositorio\cfa\dao_conta_pagar.c
+	<stdio.h>
+	<stdlib.h>
+	"dao_conta_pagar.h"
+	"funcoes.h"
+
+1669255660 c:\repositorio\cfa\dao_conta_pagar.h
+	"struct.h"
+
+1669255594 source:c:\repositorio\cfa\view_conta_pagar.c
+	<stdio.h>
+	<stdlib.h>
+	"view_conta_pagar.h"
+	"dao_conta_pagar.h"
+	"funcoes.h"
+
+1669251039 c:\repositorio\cfa\view_conta_pagar.h
+	"struct.h"
+
+1669248638 source:c:\repositorio\cfa\view_conta_receber.c
+	"view_conta_receber.h"
+
+1669249513 c:\repositorio\cfa\view_conta_receber.h
 	"struct.h"
 

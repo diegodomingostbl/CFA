@@ -1,0 +1,8 @@
+#include "struct.h"
+
+#ifndef VIEW_CONTA_RECEBER_H_INCLUDED
+#define VIEW_CONTA_RECEBER_H_INCLUDED
+
+
+
+#endif // VIEW_CONTA_RECEBER_H_INCLUDED

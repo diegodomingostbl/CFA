@@ -64,10 +64,10 @@ void loginMain(){
         printf("        / /___/ __/ / ___ |\n");
         printf("        \\____/_/   /_/  |_|\n");
         printf("                       \n");
-        printf("    Controle de fluxo automotivo\n");
-        printf("[1] - Realizar login\n");
-        printf("[0] - Sair\n");
-        printf("Digite uma opção: ");
+        printf("Controle de fluxo automotivo\n");
+        printf(" 1 - Realizar login\n");
+        printf(" 0 - Sair\n");
+        printf("Digite uma das opções acima: ");
         scanf("%d", &opcao);
 
         switch(opcao){

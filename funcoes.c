@@ -93,7 +93,9 @@ char* DateToString(DATEC data){
 
 DATEC stringToDate(char* str){
     DATEC data;
-    char *token = strtok(str, "/");
+    char datastring[20];
+    strcpy(datastring, str);
+    char *token = strtok(datastring, "/");
 
     if(token){
         data.dia = stringToINT(token);
