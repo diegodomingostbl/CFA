@@ -226,4 +226,19 @@ int dao_gravarRelatorioContaPagar(C_PAGAR* conta_pagar, int qtdContaPagar, char*
 	return 1;
 }
 
+float dao_somaContaPagar(C_PAGAR* conta_pagar, int qtdContaPagar){
+    int i = 0;
+    float soma = 0;
+
+    for(i = 0; i < qtdContaPagar; i++){
+        printf("contas pagar %f\n", (conta_pagar + i)->valor);
+        soma += (conta_pagar + i)->valor;
+    }
+
+    printf("contas pagar total  %f\n", soma);
+    system("PAUSE");
+
+    return soma;
+}
+
 

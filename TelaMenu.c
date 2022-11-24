@@ -131,9 +131,9 @@ void menuRelatorio(){
         printf(" 3 - Veículo\n");
         printf(" 4 - Contas a pagar\n");
         printf(" 5 - Contas a receber\n");
-        printf(" 6 - Balanço mensal\n");
-        printf(" 7 - Balanço anual\n");
-        printf(" 8 - Visitas\n");
+        printf(" 6 - Balanço por período\n");
+        printf(" 7 - Entrada de visita\n");
+        printf(" 8 - Entrada de visita com veículo\n");
         printf(" 0 - Voltar\n");
         printf("Digite uma das opções acima: ");
         scanf("%d", &menurelatorio);
@@ -154,8 +154,7 @@ void menuRelatorio(){
                 view_relatorioContaReceberPorDataVencimento();
                 break;
             case 6:
-                system("cls");
-                printf("RelatÃ³rio de balanÃ§o mensal");
+                view_relatorioBalancoPorPeriodo();
                 break;
             case 7:
                 system("cls");

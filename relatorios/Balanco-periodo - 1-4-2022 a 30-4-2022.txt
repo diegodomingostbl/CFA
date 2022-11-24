@@ -1,0 +1,7 @@
+Foram encontradas 4 contas
+Quantidade de contas a pagar: 2
+Valor total de contas a pagar: 163,12
+Quantidade de contas a receber: 2
+Valor total de contas a receber: 312,30
+
+Balanço no período: 149,18

@@ -83,7 +83,7 @@
 	"struct.h"
 	"archive.h"
 
-1669267113 source:c:\repositorio\cfa\telamenu.c
+1669326949 source:c:\repositorio\cfa\telamenu.c
 	<stdio.h>
 	<locale.h>
 	<ctype.h>
@@ -213,7 +213,7 @@
 	"dao_usuario.h"
 	"funcoes.h"
 
-1669245752 source:c:\repositorio\cfa\dao_usuario.c
+1669267496 source:c:\repositorio\cfa\dao_usuario.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_usuario.h"
@@ -259,7 +259,7 @@
 1668169780 c:\repositorio\cfa\view_veiculo.h
 	"struct.h"
 
-1668175528 source:c:\repositorio\cfa\dao_veiculo.c
+1669267521 source:c:\repositorio\cfa\dao_veiculo.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_veiculo.h"
@@ -269,7 +269,7 @@
 1668169526 c:\repositorio\cfa\dao_veiculo.h
 	"struct.h"
 
-1668182596 source:c:\repositorio\cfa\dao_residencia.c
+1669267397 source:c:\repositorio\cfa\dao_residencia.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_residencia.h"
@@ -443,19 +443,22 @@
 1669154476 c:\users\yago_\repositorios\cfa\view_visita.h
 	"struct.h"
 
-1669248647 source:c:\repositorio\cfa\dao_conta_receber.c
+1669326305 source:c:\repositorio\cfa\dao_conta_receber.c
+	<stdio.h>
+	<stdlib.h>
 	"dao_conta_receber.h"
+	"funcoes.h"
 
-1669266914 c:\repositorio\cfa\dao_conta_receber.h
+1669326311 c:\repositorio\cfa\dao_conta_receber.h
 	"struct.h"
 
-1669255847 source:c:\repositorio\cfa\dao_conta_pagar.c
+1669327302 source:c:\repositorio\cfa\dao_conta_pagar.c
 	<stdio.h>
 	<stdlib.h>
 	"dao_conta_pagar.h"
 	"funcoes.h"
 
-1669255660 c:\repositorio\cfa\dao_conta_pagar.h
+1669326276 c:\repositorio\cfa\dao_conta_pagar.h
 	"struct.h"
 
 1669255594 source:c:\repositorio\cfa\view_conta_pagar.c
@@ -476,5 +479,23 @@
 	"funcoes.h"
 
 1669267031 c:\repositorio\cfa\view_conta_receber.h
+	"struct.h"
+
+1669327942 source:c:\repositorio\cfa\dao_balanco.c
+	"dao_balanco.h"
+	<stdio.h>
+	<stdlib.h>
+	"funcoes.h"
+
+1669326771 c:\repositorio\cfa\dao_balanco.h
+
+1669327937 source:c:\repositorio\cfa\view_balanco.c
+	<stdio.h>
+	<stdlib.h>
+	"view_balanco.h"
+	"dao_balanco.h"
+	"funcoes.h"
+
+1669326792 c:\repositorio\cfa\view_balanco.h
 	"struct.h"
 

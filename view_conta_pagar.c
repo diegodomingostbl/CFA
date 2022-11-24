@@ -100,7 +100,6 @@ void view_alterarContaPagar(C_PAGAR conta_pagar){
     }
 }
 
-
 int view_relatorioContaPagarPorDataVencimento(){
     C_PAGAR* conta_pagar;
     int qtdContaPagar = 0;

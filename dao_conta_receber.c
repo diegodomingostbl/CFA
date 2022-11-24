@@ -226,4 +226,14 @@ int dao_gravarRelatorioContaReceber(C_RECEBER* conta_receber, int qtdContaRecebe
 	return 1;
 }
 
+float dao_somaContaReceber(C_RECEBER* conta_receber, int qtdContaReceber){
+    int i = 0;
+    float soma = 0;
+
+    for(i = 0; i < qtdContaReceber; i++){
+        soma += (conta_receber + i)->valor;
+    }
+
+    return soma;
+}
 
