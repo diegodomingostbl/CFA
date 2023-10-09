@@ -1,0 +1,4 @@
+Foram encontrados 2 funcionários
+ID    | NOME                 | CPF           | LOGIN     
+4     | diego Cesar          | 49016333843   | 123456    
+1     | diego Grossi         | 73225909025   | ana       

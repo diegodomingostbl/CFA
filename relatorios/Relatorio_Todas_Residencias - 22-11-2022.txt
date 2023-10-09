@@ -1,0 +1,6 @@
+Foram encontradas 4 residências
+ID    | ENDEREÇO                  | NÚMERO | BLOCO  
+1     | Rua diego cesar           | 1      | A      
+2     | rua domingos              | 2      | A      
+3     | Rua teste abreu           | 2      | B      
+4     | avenida                   | 13     | a      
